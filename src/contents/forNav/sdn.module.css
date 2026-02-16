@@ -1,0 +1,106 @@
+/* --- БАЗОВЫЙ НАВ (Mobile First) --- */
+
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Лого слева, бургер справа */
+  padding: 0 20px;
+  height: 60px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  /*position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;*/
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.burgerWrapper {
+  cursor: pointer;
+  z-index: 1010; /* Выше списка */
+  display: flex;
+  align-items: center;
+}
+
+/* --- ВЫПАДАЮЩЕЕ МЕНЮ (Mobile) --- */
+.menuList {
+  position: fixed;
+  top: 60px; /* Сразу под хедером */
+  left: -100%; /* Скрыто слева */
+  width: 80%; /* Не на весь экран, чтобы оставить воздух */
+  height: calc(100vh - 60px);
+  background-color: #ffffff;
+  flex-direction: column;
+  padding: 40px 20px;
+  list-style: none;
+  transition: left 0.3s ease-in-out;
+  box-shadow: 10px 0 20px rgba(0,0,0,0.05);
+  z-index: 1009;
+  display: flex;
+}
+
+.menuOpen {
+  left: 0; /* Выезжает */
+}
+
+.menuItem {
+  margin-bottom: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
+  z-index: 1008;
+}
+
+/* --- TABLET & DESKTOP (Меню в строку) --- */
+@media (min-width: 768px) {
+  .burgerWrapper {
+    display: none; /* Прячем бургер */
+  }
+
+  .menuList {
+    position: static; /* Возвращаем в поток */
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    padding: 0;
+    left: auto;
+    box-shadow: none;
+    background: transparent;
+    display: flex;
+  }
+
+  .menuItem {
+    margin-bottom: 0;
+    margin-left: 30px;
+  }
+
+  .link {
+    font-size: 0.95rem;
+  }
+
+  .overlay {
+    display: none;
+  }
+}

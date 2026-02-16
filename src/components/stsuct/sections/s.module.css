@@ -1,0 +1,303 @@
+
+
+/* --- GRID (Хозяин ширины) --- */
+/* --- GRID --- */
+/* --- ASIDE RIGHT --- */
+
+.grid {
+  display: grid;
+  width: 100%;
+  padding-top: 60px; /* Чтобы контент не уходил под хедер */
+  grid-template-columns: 1fr; /* Mobile */
+}
+
+@media (min-width: 1038px) {
+  .grid {
+    grid-template-columns: 280px 1fr; /* Появляется место под AsideLeft */
+  }
+}
+
+@media (min-width: 1380px) {
+  .grid {
+    grid-template-columns: 280px 1fr 280px; /* Ultra-Wide */
+  }
+  .asideRight {
+    display: block; /* Оживляем панель */
+    position: sticky;
+    top: 60px; /* Прилипает при скролле под хедером */
+    height: calc(100vh - 60px);
+  }
+}/*
+/* --- HEADER --- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%; /* Чтобы высота была 60px как у родителя */
+  padding: 0 20px; /* Отступы по бокам на мобилках */}
+/* --- MAIN --- */
+.main {
+  width: 100%;
+  padding: 10px; /* Отступы на мобилках */
+  background-color: #f0f0f0;
+  /*max-height: calc(100vh - 160px); /* Вычитаем высоту хедера и футера */
+}
+
+
+
+/* Общие базовые стили для обеих панелей */
+.asideBase {
+  width: 100%;
+  padding: 20px;
+  background: #fcfcfc;
+  overflow-y: auto;
+}
+
+/* Стили заголовков внутри панелей */
+.aside_title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Левая панель */
+.asideLeft, 
+.asideRight {
+  width: 100%;
+  padding: 20px;
+  background: #fcfcfc;
+  overflow-y: auto;
+}
+
+/* Личные границы для каждой */
+.asideLeft {
+  border-right: 1px solid #eee;
+}
+
+.asideRight {
+  border-left: 1px solid #eee;
+  display: none; /* Скрыта на мобилках */
+}
+
+/* Общий стиль заголовка */
+.aside_title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Липкое позиционирование для десктопа (от 1038px) */
+@media (min-width: 1038px) {
+  .asideLeft, .asideRight {
+    max-height: calc(100vh - 300px);
+    position: sticky;
+    top: 60px;
+    /*height: fit-content; /* Панель будет высотой ровно по своему контенту */
+  }
+}
+
+/* Показываем правую панель только на очень широких экранах */
+@media (min-width: 1380px) {
+  .asideRight {
+    display: block;
+  }
+}
+
+/* --- SECTION & ARTICLE --- */
+.section {
+  margin-bottom: 30px;
+  width: 100%;
+}
+.section_title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+}
+.article {
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.article_title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+/* --- FLEX (Контейнер внутри секций) --- */
+.flex {
+  display: flex;
+  flex-direction: column; /* На iPhone всё в столбик */
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .flex {
+    flex-direction: row; /* На планшете и ПК — в ряд */
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+/* --- HERO COMPONENT --- */
+.hero {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Градиент теперь зашит в сам компонент */
+  background: linear-gradient(135deg, #0070f3 0%, #9b59b6 100%);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.heroContent {
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 800px;
+}
+
+.heroContent h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.heroContent p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+/* Адаптация для мобилок */
+@media (max-width: 767px) {
+  .hero {
+    min-height: 250px;
+    margin: 10px; /* Небольшой зазор от краев экрана iPhone */
+    width: calc(100% - 20px);
+  }
+  .heroContent h1 {
+    font-size: 1.8rem;
+  }
+}
+.footer {
+  margin-top: auto; /* Толкает футер вниз */  
+    background-color: #333;
+  color: white;
+  padding: 20px 0 0 0;
+  text-align: center;
+}
+
+.flexbox {
+    display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+footer p {
+  margin: 0;
+  font-weight: normal;
+  font-size: smaller;
+  line-height: 1.5;
+}
+
+.copyright {
+  margin-top: 35px;
+  margin-bottom: 0;
+  font-size: 12px;
+}
+/* --- ПРОДВИНУТЫЙ СЕМАНТИЧЕСКИЙ РЕНТГЕН --- */
+
+/* --- СЕМАНТИЧЕСКИЙ РЕНТГЕН ПО НАЗВАНИЯМ (TITLE / ID) --- */
+
+/* 1. СЕКЦИИ (Синий) */
+:global(body.show-debug) section {
+  outline: 2px dashed #0070f3 !important;
+  outline-offset: -2px;
+  position: relative !important;
+  margin-top: 30px !important;
+  background-color: rgba(0, 112, 243, 0.03) !important;
+}
+
+:global(body.show-debug) section::before {
+  /* Сначала пробует взять title, если его нет — берет id */
+  content: "SECTION: " attr(title);
+  position: absolute;
+  top: -12px;
+  left: 10px;
+  background: #0070f3;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 10px;
+  border-radius: 4px;
+  z-index: 100;
+}
+
+/* 2. АРТИКЛИ (Красный) */
+:global(body.show-debug) article {
+  outline: 2px dotted #e74c3c !important;
+  outline-offset: -4px;
+  position: relative !important;
+  padding: 20px !important;
+  background-color: rgba(231, 76, 60, 0.03) !important;
+}
+
+:global(body.show-debug) article::before {
+  content: "ARTICLE: " attr(title);
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  background: #e74c3c;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 1px 8px;
+  border-radius: 4px;
+  z-index: 101;
+}
+
+/* 3. КОНТЕЙНЕР (Пурпурный) - здесь оставляем ID или просто название */
+:global(body.show-debug) [class*="container"] {
+  outline: 3px double #9b59b6 !important;
+  position: relative !important;
+}
+
+:global(body.show-debug) [class*="container"]::after {
+  content: "ГРАНИЦЫ КОНТЕЙНЕРА";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #9b59b6;
+  color: white;
+  font-size: 9px;
+  padding: 1px 12px;
+  border-radius: 10px;
+}
+

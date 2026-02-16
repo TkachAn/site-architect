@@ -1,0 +1,81 @@
+:root {
+  font-size: 16px;
+  background-color: darkcyan;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1.1 Типографика */
+h1, h2, h3, h4, h5, h6 {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+p, blockquote {
+  margin-bottom: 10px; /* Отступ снизу для читаемости */
+  font-weight: normal; /* Вернул нормальную жирность для текста */
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+ul, ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s; /* Плавность для всех ссылок */
+}
+input, button, textarea, select {
+  font: inherit;
+  outline: none; /* Убираем стандартную обводку */
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+
+   margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: var(--color-text-main);
+  line-height: var(--line-height-base);
+}
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Растягивает приложение на всю высоту экрана */
+
+  --color-primary: #e74c3c;
+  --color-accent: #3498db;
+  --color-accent-dark: #2980b9;
+  --color-text-main: #333333;
+  --color-text-secondary: #666666;
+  --color-background-light: #f8f8f8;
+
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 40px;
+
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 80px;
+}
