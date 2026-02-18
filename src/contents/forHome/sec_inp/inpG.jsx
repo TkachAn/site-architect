@@ -13,12 +13,13 @@ import {
   FloatInput,
 } from "../../../components/base/inputs/inputsGPT"; // Путь к вашей библиотеке инпутов
 import s from "./si.module.css";
+//import s from "./ingpt.module.css"; // Стили для секции InputsGPT
 
 export const InpG = () => {
   return (
     <>
-      <div style={{ flex: 1 }}>
-        <p style={{ marginBottom: "30px", color: "#666" }}>
+      
+        <p>
           Библиотека <b>InputsGPT</b> предоставляет компоненты с автоматическим
           форматированием и валидацией данных "на лету".
         </p>
@@ -39,9 +40,9 @@ export const InpG = () => {
               Идеально <b>для артикулов и системных ID</b>.
             </p>
             <TextInput label="Clasic Case" placeholder="enter text here" />
-            <pre className={s.codeBlock}>
+            <div className={s.codeBlock}>
               {`<TextInput label="Clasic Case" placeholder="enter text here" />`}
-            </pre>
+            </div>
           </Article>
           <Article id="camel-case" title="camelCase" className={s.demoBox}>
             <p>
@@ -57,9 +58,9 @@ export const InpG = () => {
               mode="camelCase"
               placeholder="enter code generators or keys here"
             />
-            <pre className={s.codeBlock}>
+            <div className={s.codeBlock}>
               {`<TextInput label="Camel Case" mode="camelCase" placeholder="enter code generators or keys here" />`}
-            </pre>
+            </div>
           </Article>
           <Article id="snake-case" title="Snake_case" className={s.demoBox}>
             <p>
@@ -72,9 +73,9 @@ export const InpG = () => {
               mode="snake_case"
               placeholder="enter settings or environment variables here"
             />
-            <pre className={s.codeBlock}>
+            <div className={s.codeBlock}>
               {`<TextInput label="Snake Case" mode="snake_case" placeholder="enter settings or environment variables here" />`}
-            </pre>
+            </div>
             <p>
               <strong>Когда использовать:</strong>
             </p>
@@ -119,9 +120,9 @@ export const InpG = () => {
               placeholder="Лишние пробелы исчезнут при Blur"
               rows={2}
             />
-            <pre className={s.codeBlock}>
+            <div className={s.codeBlock}>
               {`<TextAreaInput label="Super Clean Area" placeholder="Лишние пробелы исчезнут при Blur" rows={2} />`}
-            </pre>
+            </div>
             <p>
               <strong>Когда использовать:</strong>
             </p>
@@ -158,9 +159,9 @@ export const InpG = () => {
               <b>EmailInput:</b> Авто-удаление пробелов и проверка формата @.
             </p>
             <EmailInput label="Ваш Email" placeholder="example@mail.com" />
-            <pre className={s.codeBlock}>
+            <div className={s.codeBlock}>
               {`<EmailInput label="Email" placeholder="example@mail.com" />`}
-            </pre>
+            </div>
             <p>
               <b>EmailInput + Confirm Mode:</b> Добавляет поле проверки для
               исключения ошибок.
@@ -170,9 +171,9 @@ export const InpG = () => {
               placeholder="example@mail.com"
               confirm={true}
             />
-            <pre className={s.codeBlock}>
+            <div className={s.codeBlock}>
               {`<EmailInput label="Email" placeholder="example@mail.com" confirm={true} />`}
-            </pre>
+            </div>
           </Article>
               
           <Article id="password-input" title="PasswordInput" className={s.demoBox}>
@@ -186,17 +187,17 @@ export const InpG = () => {
               заглавная, минимум одна строчная и минимум одна цифра.).
             </p>
             <PasswordInput label="Введите пароль" />
-            <pre className={s.codeBlock}>
+            <div className={s.codeBlock}>
               {`<PasswordInput label="Пароль" confirm={true} />`}
-            </pre>
+            </div>
             <p>
               <b>Confirm Mode:</b> Добавляет поле проверки для исключения
               ошибок.
             </p>
             <PasswordInput label="Новый пароль" confirm={true} />
-            <pre className={s.codeBlock}>
+            <div className={s.codeBlock}>
               {`<PasswordInput label="Пароль" confirm={true} />`}
-            </pre>
+            </div>
           </Article>
         </Section>
 
@@ -207,7 +208,7 @@ export const InpG = () => {
               <b>PriceInput:</b> Форматирует ввод в денежный вид (1 000.00).
             </p>
             <PriceInput label="Стоимость услуги" />
-            <pre className={s.codeBlock}>{`<PriceInput label="Цена" />`}</pre>
+            <div className={s.codeBlock}>{`<PriceInput label="Цена" />`}</div>
           </Article>
 
           <Article id="float-input" title="FloatInput" className={s.demoBox}>
@@ -215,12 +216,12 @@ export const InpG = () => {
               <b>FloatInput:</b> Строгий ввод чисел с плавающей точкой.
             </p>
             <FloatInput label="Коэффициент" placeholder="0.00" />
-            <pre className={s.codeBlock}>
+            <div className={s.codeBlock}>
               {`<FloatInput label="Вес" placeholder="0.00" />`}
-            </pre>
+            </div>
           </Article>
         </Section>
-      </div>
+      
     </>
   );
 };

@@ -7,15 +7,16 @@ import { Container } from "../../components/stsuct/sections/container";
 import { Header } from "../../components/stsuct/sections/sections";
 import { Footer } from "../../components/stsuct/sections/sections";
 import s from "./s.module.css";
+import { Layout } from "../layout";
 
 
 
 export function NotFound() {
   return (
-    <>
-      <Header />
-      <Main title="404 Not Found">
-        <Container>
+    <Layout>
+      
+      
+      
           <Section title="Страница не найдена">
             {/* s.notFound для центрирования и базового оформления */}
             <div className={s.notFound}>
@@ -43,9 +44,9 @@ export function NotFound() {
                 </div> */}
             </div>
           </Section>
-        </Container>
-      </Main>
-      <Footer />
-    </>
+        
+     
+      
+    </Layout>
   );
 }

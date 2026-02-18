@@ -1,4 +1,4 @@
-/* Раздел документации */
+/* Раздел документации *
 .docContainer {
   max-width: 1000px;
   margin: 50px auto;
@@ -65,7 +65,7 @@
   font-family: 'Fira Code', monospace;
   overflow-x: auto;
 }
-/* Стили документации (модульные) */
+/* Стили документации (модульные) *
 .docSection {
   margin-bottom: 50px;
   padding: 25px;
@@ -141,7 +141,7 @@
 
 /* ingpt.module.css */
 
-/* Главный контейнер всей документации */
+/* Главный контейнер всей документации *
 .docContainer {
   max-width: 1000px;
   margin: 50px auto;
@@ -149,7 +149,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Карточка отдельной секции (например, для TextInput) */
+/* Карточка отдельной секции (например, для TextInput) *
 .docBlock {
   margin-bottom: 60px;
   padding: 30px;
@@ -159,7 +159,7 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* Заголовки и подзаголовки внутри секции */
+/* Заголовки и подзаголовки внутри секции *
 .docTitle {
   color: #1a73e8;
   margin-top: 0;
@@ -179,7 +179,7 @@
   line-height: 1.6;
 }
 
-/* Список ключевых возможностей */
+/* Список ключевых возможностей *
 .featureList {
   padding-left: 20px;
   color: #5f6368;
@@ -188,7 +188,7 @@
   margin: 20px 0;
 }
 
-/* Таблица трансформации (Вход -> Результат) */
+/* Таблица трансформации (Вход -> Результат) *
 .transformationTable {
   margin: 20px 0;
   padding: 15px;
@@ -222,7 +222,7 @@
   font-weight: bold;
 }
 
-/* Область с живыми инпутами */
+/* Область с живыми инпутами *
 .exampleArea {
   padding: 25px;
   background: #f8f9fa;
@@ -251,23 +251,4 @@
   letter-spacing: 1px;
 }
 
-/* Добавь это в ingpt.module.css */
-
-.gridTwo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-/* Адаптив: на маленьких экранах в одну колонку */
-@media (max-width: 600px) {
-  .gridTwo {
-    grid-template-columns: 1fr;
-  }
-}
-
-.flexColumn {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+  

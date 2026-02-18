@@ -13,6 +13,7 @@ import { Address } from "../contents/forFooter/address/address";
 import { Contact } from "../contents/forFooter/contacts/contact";
 import { Social } from "../contents/forFooter/social/socium";
 
+
 export function Layout({ children }) {
   return (
     <>
@@ -32,6 +33,7 @@ export function Layout({ children }) {
           <Social />
         </AsideRight>
       </Grid>
+
       <Footer>
         <Address />
         <Contact />
