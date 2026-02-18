@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import {
   Section,
@@ -114,7 +115,7 @@ export const InpG = () => {
               <li>гарантируя компактность данных.</li>
             </ul>
             {/**он схлопывает лишние пробелы и переносы строк в
-                один, */}
+                один, }
             <TextAreaInput
               label="Super Clean Area"
               placeholder="Лишние пробелы исчезнут при Blur"
@@ -139,7 +140,7 @@ export const InpG = () => {
           </Article>
         </Section>
 
-        {/* --- БЛОК БЕЗОПАСНОСТИ В ТАКОМ ЖЕ СТИЛЕ --- */}
+        {/* --- БЛОК БЕЗОПАСНОСТИ В ТАКОМ ЖЕ СТИЛЕ --- }
         <Section title="Email и Безопасность" id="auth-fields">
           <p>
             Формы регистрации часто страдают от опечаток. Чтобы решить это, в
@@ -201,7 +202,7 @@ export const InpG = () => {
           </Article>
         </Section>
 
-        {/* --- БЛОК ЧИСЕЛ В ТАКОМ ЖЕ СТИЛЕ --- */}
+        {/* --- БЛОК ЧИСЕЛ В ТАКОМ ЖЕ СТИЛЕ --- }
         <Section title="Финансовые и числовые данные" id="numeric-fields">
           <Article id="price-input" title="PriceInput" className={s.demoBox}>
             <p>
@@ -222,6 +223,213 @@ export const InpG = () => {
           </Article>
         </Section>
       
+    </>
+  );
+};*/
+
+/* inpG.jsx — Полный файл с добавленным IntegerInput */
+import React from "react";
+import { Section, Article } from "../../../components/stsuct/sections/sections";
+import {
+  TextInput,
+  TextAreaInput,
+  EmailInput,
+  PasswordInput,
+  PriceInput,
+  FloatInput,
+  IntegerInput,
+} from "../../../components/base/inputs/inputsGPT";
+import s from "./si.module.css";
+
+export const InpG = () => {
+  return (
+    <>
+      <p>
+        Библиотека <b>InputsGPT</b> предоставляет компоненты с автоматическим
+        форматированием и валидацией данных "на лету".
+      </p>
+
+      <Section title="TextInput" id="text-fields">
+        <Article title="Уникальные режимы TextInput" id="text-transform">
+          <p>
+            Компонент <b>TextInput</b> поддерживает уникальный пропс -
+            <b>mode</b>(Default, CamelCase, Snake_case), который меняет
+            поведение поля:
+          </p>
+        </Article>
+
+        <Article id="default-mode" title="Default Mode" className={s.demoBox}>
+          <p>
+            <b>Default:</b> Удаляет все пробелы.
+            <br></br>
+            Идеально <b>для артикулов и системных ID</b>.
+          </p>
+          <TextInput label="Clasic Case" placeholder="enter text here" />
+          <div className={s.codeBlock}>
+            {`<TextInput label="Clasic Case" placeholder="enter text here" />`}
+          </div>
+        </Article>
+
+        <Article id="camel-case" title="camelCase" className={s.demoBox}>
+          <p>
+            <strong>camelCase:</strong> Превращает вводимую строку в формат
+            верблюжьего регистра (например, "user name" превращается в
+            userName). При нажатии на пробел следующий символ автоматически
+            становится заглавным.
+            <br></br>
+            Незаменимо <b>для генераторов кода или ключей</b>.
+          </p>
+          <TextInput
+            label="Camel Case"
+            mode="camelCase"
+            placeholder="enter code generators or keys here"
+          />
+          <div className={s.codeBlock}>
+            {`<TextInput label="Camel Case" mode="camelCase" placeholder="enter code generators or keys here" />`}
+          </div>
+        </Article>
+
+        <Article id="snake-case" title="Snake_case" className={s.demoBox}>
+          <p>
+            <strong>Snake_case:</strong> Автоматически заменяет все пробелы на
+            нижнее подчеркивание <br></br>(например, "my file" превращается в
+            my_file).
+          </p>
+          <TextInput
+            label="Snake Case"
+            mode="snake_case"
+            placeholder="enter settings or environment variables here"
+          />
+          <div className={s.codeBlock}>
+            {`<TextInput label="Snake Case" mode="snake_case" placeholder="enter settings or environment variables here" />`}
+          </div>
+          <p>
+            <strong>Когда использовать:</strong>
+          </p>
+          <ul>
+            <li>
+              Для ввода технических имен, идентификаторов, системных ключей или
+              тегов.
+            </li>
+            <li>
+              В формах, где нужно гарантировать отсутствие лишних пробелов без
+              ручной очистки данных.
+            </li>
+          </ul>
+        </Article>
+      </Section>
+
+      <Section title="TextArea" id="textarea-fields">
+        <Article id="textarea" title="режим Super Clean" className={s.demoBox}>
+          <ul>
+            <li>
+              Для больших текстов используется <b>TextAreaInput</b>.
+            </li>
+            <li>
+              Его главная <strong>Особенность "Super Clean":</strong>. При
+              потере фокуса (onBlur)
+            </li>
+            <li>Удаляются пробелы по краям строки.</li>
+            <li>
+              Любые последовательности из нескольких пробелов или переносов
+              строк внутри текста заменяются на один пробел.
+            </li>
+            <li>гарантируя компактность данных.</li>
+          </ul>
+          <TextAreaInput
+            label="Super Clean Area"
+            placeholder="Лишние пробелы исчезнут при Blur"
+            rows={2}
+          />
+          <div className={s.codeBlock}>
+            {`<TextAreaInput label="Super Clean Area" placeholder="Лишние пробелы исчезнут при Blur" rows={2} />`}
+          </div>
+        </Article>
+      </Section>
+
+      <Section title="Email и Безопасность" id="auth-fields">
+        <p>
+          Формы регистрации часто страдают от опечаток. Чтобы решить это, в
+          EmailInput и PasswordInput встроен блок ConfirmBlock. Двойная
+          проверка.
+        </p>
+        <Article id="email-input" title="email input" className={s.demoBox}>
+          <p>
+            <b>EmailInput:</b> Авто-удаление пробелов и проверка формата @.
+          </p>
+          <EmailInput label="Ваш Email" placeholder="example@mail.com" />
+          <div className={s.codeBlock}>
+            {`<EmailInput label="Email" placeholder="example@mail.com" />`}
+          </div>
+          <p>
+            <b>EmailInput + Confirm Mode:</b> Добавляет поле проверки.
+          </p>
+          <EmailInput
+            label="Ваш Email"
+            placeholder="example@mail.com"
+            confirm={true}
+          />
+          <div className={s.codeBlock}>
+            {`<EmailInput label="Email" placeholder="example@mail.com" confirm={true} />`}
+          </div>
+        </Article>
+
+        <Article
+          id="password-input"
+          title="PasswordInput"
+          className={s.demoBox}
+        >
+          <p>
+            <b>PasswordInput:</b> Контроль видимости (👁️) и встроенная
+            валидация.
+          </p>
+          <PasswordInput label="Введите пароль" />
+          <div className={s.codeBlock}>
+            {`<PasswordInput label="Пароль" />`}
+          </div>
+          <p>
+            <b>Confirm Mode:</b> Добавляет поле проверки.
+          </p>
+          <PasswordInput label="Новый пароль" confirm={true} />
+          <div className={s.codeBlock}>
+            {`<PasswordInput label="Пароль" confirm={true} />`}
+          </div>
+        </Article>
+      </Section>
+
+      <Section title="Финансовые и числовые данные" id="numeric-fields">
+        <Article
+          id="integer-input"
+          title="IntegerInput (Целые числа)"
+          className={s.demoBox}
+        >
+          <p>
+            <b>IntegerInput:</b> Только целые числа. Запрещает ведущие нули.
+          </p>
+          <IntegerInput label="Количество" placeholder="0" />
+          <div className={s.codeBlock}>
+            {`<IntegerInput label="Количество" />`}
+          </div>
+        </Article>
+
+        <Article id="price-input" title="PriceInput" className={s.demoBox}>
+          <p>
+            <b>PriceInput:</b> Форматирует ввод в денежный вид (1 000.00).
+          </p>
+          <PriceInput label="Стоимость услуги" />
+          <div className={s.codeBlock}>{`<PriceInput label="Цена" />`}</div>
+        </Article>
+
+        <Article id="float-input" title="FloatInput" className={s.demoBox}>
+          <p>
+            <b>FloatInput:</b> Строгий ввод чисел с плавающей точкой.
+          </p>
+          <FloatInput label="Коэффициент" placeholder="0.00" />
+          <div className={s.codeBlock}>
+            {`<FloatInput label="Вес" placeholder="0.00" />`}
+          </div>
+        </Article>
+      </Section>
     </>
   );
 };
