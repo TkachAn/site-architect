@@ -11,23 +11,6 @@
   grid-template-columns: 1fr; /* Mobile */
 }
 
-@media (min-width: 1038px) {
-  .grid {
-    grid-template-columns: 280px 1fr; /* Появляется место под AsideLeft */
-  }
-}
-
-@media (min-width: 1380px) {
-  .grid {
-    grid-template-columns: 280px 1fr 280px; /* Ultra-Wide */
-  }
-  .asideRight {
-    display: block; /* Оживляем панель */
-    position: sticky;
-    top: 60px; /* Прилипает при скролле под хедером */
-    height: calc(100vh - 60px);
-  }
-}/*
 /* --- HEADER --- */
 header {
   position: fixed;
@@ -57,12 +40,6 @@ header {
 
 
 /* Общие базовые стили для обеих панелей */
-.asideBase {
-  width: 100%;
-  padding: 20px;
-  background: #fcfcfc;
-  overflow-y: auto;
-}
 
 /* Стили заголовков внутри панелей */
 .aside_title {
@@ -74,13 +51,12 @@ header {
   padding-bottom: 10px;
 }
 
-/* Левая панель */
-.asideLeft, 
-.asideRight {
+
+.asideBase, .asideLeft, .asideRight {
   width: 100%;
   padding: 20px;
   background: #fcfcfc;
-  overflow-y: auto;
+  overflow-y: visible; /* Вместо auto, чтобы не было лишних полос прокрутки */
 }
 
 /* Личные границы для каждой */
@@ -106,10 +82,14 @@ header {
 /* Липкое позиционирование для десктопа (от 1038px) */
 @media (min-width: 1038px) {
   .asideLeft, .asideRight {
-    max-height: calc(100vh - 300px);
+    /*max-height: calc(100vh - 300px);*/
     position: sticky;
     top: 60px;
-    /*height: fit-content; /* Панель будет высотой ровно по своему контенту */
+    height: auto; /* Высота теперь зависит только от контента */
+    align-self: start; /* Важно: панель не растягивается по высоте соседа *//*height: fit-content; /* Панель будет высотой ровно по своему контенту */
+  }
+  .grid {
+    grid-template-columns: 280px 1fr; /* Появляется место под AsideLeft */
   }
 }
 
@@ -117,6 +97,15 @@ header {
 @media (min-width: 1380px) {
   .asideRight {
     display: block;
+  }
+  .grid {
+    grid-template-columns: 280px 1fr 280px; /* Ultra-Wide */
+  }
+  .asideRight {
+    display: block; /* Оживляем панель */
+    position: sticky;
+    top: 60px; /* Прилипает при скролле под хедером */
+    height: calc(100vh - 60px);
   }
 }
 

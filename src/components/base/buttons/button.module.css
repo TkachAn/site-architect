@@ -1,18 +1,37 @@
-/* //src/elem/buttons/button.module.css */
+/* src/base/buttons/button.module.css */
+
 .baseButton {
-  padding: 8px 16px;
-  margin: 5px 15px;
+  /* Mobile First: увеличенная область нажатия */
+  padding: 10px 20px;
+  margin: 8px;
   border: none;
   border-radius: 8px;
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Десктоп: стандартные отступы */
+@media (min-width: 768px) {
+  .baseButton {
+    padding: 8px 16px;
+    margin: 5px 15px;
+  }
+}
+
+.baseButton:active:not(:disabled) {
+  transform: scale(0.98);
 }
 
 .baseButton:disabled {
-  cursor: not-allowed; /* Добавляем стиль курсора для неактивной кнопки */
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .normal {
@@ -23,7 +42,6 @@
 .normal:hover:not(:disabled) {
   background-color: #0070f3;
   color: #fff;
-  /*background-color: #e0e0e0;*/
 }
 
 .accent {
@@ -38,62 +56,48 @@
 .blocked {
   background-color: #dddddd;
   color: #888;
-  /* cursor: not-allowed; Убрали, так как теперь применяется к baseButton:disabled */
-}
-
-/*iconButtons*/
-.iconButton {
-  background: transparent;
-  border: none;
-  padding: 4px;
-  cursor: pointer;
-  color: rgb(153, 17, 112);
-  transition: color 0.2s;
-}
-
-.iconButton:hover {
-  color: crimson;
-}
-
-.out{
-  border: none;
-  background-color:transparent;
-  color: #007bff;
-
-  font-weight: 700;
-}
-.out:hover{
-  cursor: pointer;
-  color: blue;
-
 }
 
 .iconButton {
   background: transparent;
   border: none;
-  padding: 4px;
+  padding: 8px; 
   cursor: pointer;
   color: rgb(153, 17, 112);
+  transition: color 0.2s, transform 0.2s, background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  .iconButton {
+    padding: 4px;
+  }
+}
+
+.iconButton:hover:not(:disabled) {
+  color: crimson;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.out {
+  border: none;
+  background-color: transparent;
+  color: #007bff;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 8px;
   transition: color 0.2s;
 }
 
-.iconButton:hover {
-  color: crimson;
+.out:hover:not(:disabled) {
+  color: blue;
+  text-decoration: underline;
 }
 
-.out{
-  border: none;
-  background-color:transparent;
-  color: #007bff;
-  
-  font-weight: 700;
-}
-.out:hover{
-  cursor: pointer;
-  color: blue;
-  
-}
- /* button.module.css */
+/* Debug mode */
 :global(body.show-debug) .baseButton {
   outline: 2px solid #27ae60 !important;
   position: relative;
