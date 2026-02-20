@@ -1,0 +1,4 @@
+monitor LG: 1920x1080;
+monitor HP: 1280x1024;
+tablet: 1072x640;
+mobile: 873x393 || 791x302;
