@@ -6,19 +6,25 @@ import {
   AsideLeft,
   AsideRight,
   Footer,
+  Flex,
 } from "../components/stsuct/sections/sections";
 import { DinNav } from "../contents/forNav/DinNav";
 import { AutoAnchorNav } from "../components/autoNav/nav";
 import { Address } from "../contents/forFooter/address/address";
 import { Contact } from "../contents/forFooter/contacts/contact";
 import { Social } from "../contents/forFooter/social/socium";
+import { Logo } from "../contents/forNav/logo";
 
 
 export function Layout({ children }) {
   return (
     <>
       <Header id="main-header">
+        
+        <Logo />
         <DinNav />
+
+        
       </Header>
 
       <Grid>

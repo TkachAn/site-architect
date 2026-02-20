@@ -22,18 +22,18 @@ const validators = {
       : "Пароль должен содержать минимум 8 символов, заглавную букву, строчную букву и цифру";
   },
 
+  digits: (v) => {
+    if (!v) return "";
+    if (!/^\d+$/.test(v)) return "Только цифры";
+    if (/^0\d+/.test(v)) return "Число не может начинаться с 0";
+    return "";
+  },
+
   integer: (v) => {
     if (!v) return "";
     if (!/^\d+$/.test(v)) return "Только целые числа";
     if (v.length > 1 && v.startsWith("0"))
       return "Число не может начинаться с 0";
-    return "";
-  },
-
-  digits: (v) => {
-    if (!v) return "";
-    if (!/^\d+$/.test(v)) return "Только цифры";
-    if (/^0\d+/.test(v)) return "Число не может начинаться с 0";
     return "";
   },
 
@@ -423,7 +423,7 @@ export const FloatInput = (props) => <DigitsInput {...props} decimal={true} />;
 
 /* =========================
    PRICE INPUT
-========================= */
+========================= *
 export const PriceInput = forwardRef(
   ({ label = "Цена", onChange, error, defaultValue }, ref) => {
     const [digits, setDigits] = useState(
@@ -446,6 +446,77 @@ export const PriceInput = forwardRef(
       <BaseInput label={label} error={error}>
         <input
           ref={ref}
+          className={styles.input}
+          inputMode="numeric"
+          value={formatDisplay(digits)}
+          onChange={handleChange}
+        />
+      </BaseInput>
+    );
+  },
+);*/
+
+export const PriceInput = forwardRef(
+  (
+    {
+      label = "Цена",
+      onChange,
+      error,
+      defaultValue,
+      locale = "ru-RU",
+      currency = "RUB",
+    },
+    ref,
+  ) => {
+    // Инициализируем состояние из defaultValue (переводим в "копейки")
+    const [digits, setDigits] = useState(
+      defaultValue ? String(Math.round(defaultValue * 100)) : "",
+    );
+
+    const inputRef = useRef(null);
+
+    // Универсальный форматировщик
+    const formatter = new Intl.NumberFormat(locale, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+
+    const formatDisplay = (d) => {
+      if (!d) return formatter.format(0);
+      const numericValue = Number(d) / 100;
+      return formatter.format(numericValue);
+    };
+
+    const handleChange = (e) => {
+      const input = e.target;
+      const selectionStart = input.selectionStart;
+      const oldLength = input.value.length;
+
+      const d = input.value.replace(/\D/g, "");
+      setDigits(d);
+
+      if (onChange) {
+        onChange(Number(d || 0) / 100);
+      }
+
+      // Логика сохранения позиции курсора после перерисовки
+      requestAnimationFrame(() => {
+        if (inputRef.current) {
+          const newLength = inputRef.current.value.length;
+          const newPosition = selectionStart + (newLength - oldLength);
+          inputRef.current.setSelectionRange(newPosition, newPosition);
+        }
+      });
+    };
+
+    return (
+      <BaseInput label={label} error={error}>
+        <input
+          ref={(node) => {
+            inputRef.current = node;
+            if (typeof ref === "function") ref(node);
+            else if (ref) ref.current = node;
+          }}
           className={styles.input}
           inputMode="numeric"
           value={formatDisplay(digits)}

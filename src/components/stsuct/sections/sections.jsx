@@ -57,12 +57,7 @@ export function Article({ children, title, id, className }) {
 
 export function AsideLeft({ children, id, className }) {
   return (
-    <aside
-      id={id}
-      
-      className={`${s.asideLeft} ${className || ""}`}
-    >
-      
+    <aside id={id} className={`${s.asideLeft} ${className || ""}`}>
       {children}
     </aside>
   );
@@ -70,12 +65,7 @@ export function AsideLeft({ children, id, className }) {
 
 export function AsideRight({ children, id, className }) {
   return (
-    <aside
-      id={id}
-      
-      className={`${s.asideRight} ${className || ""}`}
-    >
-      
+    <aside id={id} className={`${s.asideRight} ${className || ""}`}>
       {children}
     </aside>
   );

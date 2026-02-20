@@ -14,7 +14,7 @@ export function DinNav() {
 
   return (
     <nav className={s.nav}>
-      <div className={s.logo}>ARCH.ENGINE</div>
+      
 
       <div className={s.burgerWrapper}>
         {isOpen ? (

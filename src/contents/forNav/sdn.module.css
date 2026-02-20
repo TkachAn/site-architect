@@ -9,7 +9,7 @@
   height: 60px;
   background-color: #ffffff;
   border-bottom: 1px solid #eee;
-  width: 100%;
+  /*width: 100%;
   /*position: fixed;
   top: 0;
   left: 0;
@@ -58,8 +58,8 @@
 .link {
   text-decoration: none;
   color: #333;
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: 1.3rem;
+  font-weight: 700;
   display: block;
 }
 

@@ -52,7 +52,7 @@ import {
   DigitsInput
 } from "../../../base/inputs/inputsGPT";
 
-/* Универсальный компонент секции для документации *//*
+/* Универсальный компонент секции для документации */ /*
 const DocBlock = ({ title, subTitle, description, features, codeExample, children }) => (
   <div style={{ 
     marginBottom: '60px', 
@@ -109,7 +109,7 @@ export const InpS = () => {
         </p>
       </header>
 
-      {/* 1. TEXT INPUT *//*}
+      {/* 1. TEXT INPUT */ /*}
       <DocBlock 
         title="TextInput — Текстовый процессор"
         subTitle="Контроль каждого символа"
@@ -129,7 +129,7 @@ export const InpS = () => {
         </div>
       </DocBlock>
 
-      {/* 2. TEXTAREA *//*}
+      {/* 2. TEXTAREA */ /*}
       <DocBlock 
         title="TextAreaInput — Интеллектуальный редактор"
         subTitle="Чистота больших текстов"
@@ -145,7 +145,7 @@ export const InpS = () => {
         <TextAreaInput label="Ваше сообщение" placeholder="Введите текст с кучей пробелов и кликните мимо..." />
       </DocBlock>
 
-      {/* 3. DIGITS & FLOAT *//*}
+      {/* 3. DIGITS & FLOAT */ /*}
       <DocBlock 
         title="Digits & Float — Математическая точность"
         subTitle="Никаких букв в числах"
@@ -164,7 +164,7 @@ export const InpS = () => {
         </div>
       </DocBlock>
 
-      {/* 4. SECURITY *//*}
+      {/* 4. SECURITY */ /*}
       <DocBlock 
         title="Email & Password — Тройная защита"
         subTitle="Конфиденциальность и валидация"
@@ -183,7 +183,7 @@ export const InpS = () => {
         </div>
       </DocBlock>
 
-      {/* 5. PRICE *//*}
+      {/* 5. PRICE */ /*}
       <DocBlock 
         title="PriceInput — Финансовая маска"
         subTitle="Форматирование валюты в реальном времени"
@@ -223,7 +223,7 @@ import {
   PasswordInput,
   PriceInput,
   DigitsInput,
-  FloatInput
+  FloatInput,
 } from "../../../base/inputs/inputsGPT";
 
 /* Компонент для строки в таблице трансформации */
@@ -239,40 +239,64 @@ const TransformRow = ({ from, to, note }) => (
 export const InpS = () => {
   return (
     <div className={s.docContainer}>
-      
       {/* 1. TEXT INPUT */}
       <section className={s.docBlock}>
         <h2 className={s.docTitle}>TextInput — Текстовый процессор</h2>
         <h4 className={s.docSubTitle}>Контроль каждого символа</h4>
         <p className={s.docDescription}>
-          Универсальное поле для ввода строк, которое автоматически блокирует «мусорные» пробелы. 
-          Идеально подходит для создания чистых логинов, системных имен и заголовков.
+          Универсальное поле для ввода строк, которое автоматически блокирует
+          «мусорные» пробелы. Идеально подходит для создания чистых логинов,
+          системных имен и заголовков.
         </p>
-        
+
         <ul className={s.featureList}>
-          <li><strong>Блокировка пробелов:</strong> В стандартном режиме ввод пробела физически невозможен.</li>
-          <li><strong>Режим CamelCase:</strong> Автоматическое создание заглавной буквы после пробела.</li>
-          <li><strong>Режим Snake_case:</strong> Превращает все пробелы в нижнее подчеркивание.</li>
+          <li>
+            <strong>Блокировка пробелов:</strong> В стандартном режиме ввод
+            пробела физически невозможен.
+          </li>
+          <li>
+            <strong>Режим CamelCase:</strong> Автоматическое создание заглавной
+            буквы после пробела.
+          </li>
+          <li>
+            <strong>Режим Snake_case:</strong> Превращает все пробелы в нижнее
+            подчеркивание.
+          </li>
         </ul>
 
         <div className={s.transformationTable}>
-          <TransformRow from="Имя ␣ Пользователя" to="ИмяПользователя" note="Default" />
+          <TransformRow
+            from="Имя ␣ Пользователя"
+            to="ИмяПользователя"
+            note="Default"
+          />
           <TransformRow from="my ␣ var" to="myVar" note="camelCase" />
           <TransformRow from="system ␣ id" to="system_id" note="snake_case" />
         </div>
 
         <div className={s.exampleArea}>
           <div className={s.gridTwo}>
-            <TextInput label="Имя_пользователя" placeholder="Пробелы запрещены" />
-            <TextInput label="Логин" mode="camelCase" placeholder="ivan ivanov -> ivanIvanov" />
-            <TextInput label="Код" mode="snake_case" placeholder="user name -> user_name" />
+            <TextInput
+              label="Имя_пользователя"
+              placeholder="Пробелы запрещены"
+            />
+            <TextInput
+              label="Логин"
+              mode="camelCase"
+              placeholder="ivan ivanov -> ivanIvanov"
+            />
+            <TextInput
+              label="Код"
+              mode="snake_case"
+              placeholder="user name -> user_name"
+            />
           </div>
         </div>
 
         <div className={s.codeBox}>
           <span className={s.codeLabel}>Синтаксис:</span>
           <pre>
-{`<TextInput label="Имя_пользователя" />
+            {`<TextInput label="Имя_пользователя" />
 <TextInput label="Логин" mode="camelCase" />
 <TextInput label="Код" mode="snake_case" />`}
           </pre>
@@ -281,14 +305,19 @@ export const InpS = () => {
 
       {/* 2. TEXTAREA */}
       <section className={s.docBlock}>
-        <h2 className={s.docTitle}>TextAreaInput — Интеллектуальный редактор</h2>
+        <h2 className={s.docTitle}>
+          TextAreaInput — Интеллектуальный редактор
+        </h2>
         <p className={s.docDescription}>
-          Компонент с алгоритмом <strong>Super Clean</strong>. Удаляет лишние пробелы и 
-          исправляет переносы строк при потере фокуса (onBlur).
+          Компонент с алгоритмом <strong>Super Clean</strong>. Удаляет лишние
+          пробелы и исправляет переносы строк при потере фокуса (onBlur).
         </p>
-        
+
         <div className={s.exampleArea}>
-          <TextAreaInput label="Описание" placeholder="Введите текст и кликните мимо..." />
+          <TextAreaInput
+            label="Описание"
+            placeholder="Введите текст и кликните мимо..."
+          />
         </div>
 
         <div className={s.codeBox}>
@@ -300,7 +329,8 @@ export const InpS = () => {
       <section className={s.docBlock}>
         <h2 className={s.docTitle}>Digits & Float — Математическая точность</h2>
         <p className={s.docDescription}>
-          Строгая фильтрация. Блокирует буквы и исправляет ошибки формата (например, "005" станет "5").
+          Строгая фильтрация. Блокирует буквы и исправляет ошибки формата
+          (например, "005" станет "5").
         </p>
 
         <div className={s.transformationTable}>
@@ -317,7 +347,7 @@ export const InpS = () => {
 
         <div className={s.codeBox}>
           <pre>
-{`<DigitsInput label="Только_цифры" />
+            {`<DigitsInput label="Только_цифры" />
 <FloatInput label="Дробное_число" />`}
           </pre>
         </div>
@@ -327,7 +357,8 @@ export const InpS = () => {
       <section className={s.docBlock}>
         <h2 className={s.docTitle}>PriceInput — Финансовая маска</h2>
         <p className={s.docDescription}>
-          Разделяет тысячи пробелами и фиксирует два знака после запятой. Возвращает чистое число.
+          Разделяет тысячи пробелами и фиксирует два знака после запятой.
+          Возвращает чистое число.
         </p>
 
         <div className={s.exampleArea}>
@@ -338,7 +369,6 @@ export const InpS = () => {
           <pre>{`<PriceInput label="Цена" />`}</pre>
         </div>
       </section>
-
     </div>
   );
 };
