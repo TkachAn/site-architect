@@ -6,6 +6,7 @@
   width: 100%;
   padding-top: 40px; /* Чтобы контент не уходил под хедер */
   grid-template-columns: 1fr; /* Mobile */
+  background-color: #f0f0f0;
 }
 /* --- HEADER --- */
 header {
@@ -187,6 +188,7 @@ header {
   color: white;
   padding: 20px 0 0 0;
   text-align: center;
+  
 }
 
 .flexbox {
@@ -201,6 +203,7 @@ footer p {
   font-weight: normal;
   font-size: smaller;
   line-height: 1.5;
+  
 }
 
 .copyright {
