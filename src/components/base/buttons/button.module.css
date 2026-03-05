@@ -63,7 +63,7 @@
   border: none;
   padding: 8px; 
   cursor: pointer;
-  color: rgb(153, 17, 112);
+  color: var(--clr-icon-l, #333);
   transition: color 0.2s, transform 0.2s, background-color 0.2s;
   display: inline-flex;
   align-items: center;
@@ -95,22 +95,4 @@
 .out:hover:not(:disabled) {
   color: blue;
   text-decoration: underline;
-}
-
-/* Debug mode */
-:global(body.show-debug) .baseButton {
-  outline: 2px solid #27ae60 !important;
-  position: relative;
-}
-
-:global(body.show-debug) .baseButton::after {
-  content: "BTN";
-  position: absolute;
-  top: -15px;
-  left: 0;
-  background: #27ae60;
-  color: white;
-  font-size: 8px;
-  padding: 1px 4px;
-  border-radius: 2px;
 }

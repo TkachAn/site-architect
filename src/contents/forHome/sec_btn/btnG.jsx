@@ -1,6 +1,6 @@
 // src/contents/forHome/sec_btn/btnG.jsx
 "use client";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Section, Article } from "../../../components/stsuct/sections/sections";
 import {
   NormButton,
@@ -10,7 +10,6 @@ import {
   EditButton,
 } from "../../../components/base/buttons/buttons";
 import {
-  CloseIconButton,
   DeleteIconButton,
   EditIconButton,
   AddIconButton,
@@ -22,7 +21,7 @@ import s from "./btnG.module.css";
 
 export const BtnG = () => {
   const [lastAction, setLastAction] = useState("Нажмите на любую кнопку...");
-  const [isDebug, setIsDebug] = useState(false);
+ 
 
   const handleAction = (msg) =>
     setLastAction(`Событие: ${msg} (${new Date().toLocaleTimeString()})`);
@@ -31,11 +30,7 @@ export const BtnG = () => {
     return () => document.body.classList.remove("show-debug");
   }, []);
 
-  const toggleDebug = () => {
-    setIsDebug(!isDebug);
-    document.body.classList.toggle("show-debug");
-    handleAction(isDebug ? "Debug выключен" : "Debug включен");
-  };
+
 
   return (
     <>
@@ -175,21 +170,6 @@ export const BtnG = () => {
         </Article>
       </Section>
 
-      {/* --- РЕЖИМ ОТЛАДКИ --- */}
-      <Section title="Инструменты разработчика" id="debug">
-        <Article title="Debug Mode" className={s.demoBox}>
-          <p>
-            Нажмите кнопку ниже, чтобы увидеть границы всех кнопок и их
-            технические метки.
-          </p>
-          <NormButton
-            onClick={toggleDebug}
-            status={isDebug ? "accent" : "normal"}
-          >
-            {isDebug ? "ДЕБАК ВКЛЮЧЕН" : "ВКЛЮЧИТЬ ДЕБАГ"}
-          </NormButton>
-        </Article>
-      </Section>
     </>
   );
 };

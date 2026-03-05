@@ -1,6 +1,6 @@
 // src/components/strucGrig/Section/Section.jsx
 import { Container } from "./container";
-import s from "./s.module.css";
+import s from "./s.module.css"; // Используем основной файл стилей
 
 export function Header({ children, id }) {
   return (
@@ -24,16 +24,24 @@ export function Hero({ children, title = "HERO", id }) {
 
 export function Section({ children, title, id, className }) {
   return (
-    <section id={id} className={`${s.section} ${className || ""}`}>
-      <h2 className={s.section_title}>{title}</h2>
+    <section
+      id={id}
+      className={`${s.section} ${className || ""}`}
+      title={title}
+    >
+      {title && <h2 className={s.section_title}>{title}</h2>}
       {children}
     </section>
   );
 }
+
+/* ВОЗВРАЩЕНО: Используем Container для сетки, как и было в оригинале */
 export function Grid({ children, id, className }) {
   return (
-    <Container id={id} className={`${s.grid} ${className || ""}`}>
-      {children}
+    <Container >
+      <div id={id} className={`${s.grid} ${className || ""}`}>
+        {children}
+      </div>
     </Container>
   );
 }
@@ -48,8 +56,12 @@ export function Flex({ children, id, className }) {
 
 export function Article({ children, title, id, className }) {
   return (
-    <article id={id} className={`${s.article} ${className || ""}`}>
-      <h3 className={s.article_title}>{title}</h3>
+    <article
+      id={id}
+      className={`${s.article} ${className || ""}`}
+      title={title}
+    >
+      {title && <h3 className={s.article_title}>{title}</h3>}
       {children}
     </article>
   );
@@ -76,7 +88,9 @@ export function Footer({ children }) {
     <footer className={s.footer}>
       <Container>
         <div className={s.flexbox}>{children}</div>
-        <p>&copy; 2026 ARCH.ENGINE. Все права защищены.</p>
+        <p className={s.copyright}>
+          &copy; 2026 ARCH.ENGINE. Все права защищены.
+        </p>
       </Container>
     </footer>
   );

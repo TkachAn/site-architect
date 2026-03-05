@@ -14,8 +14,6 @@ export function DinNav() {
 
   return (
     <nav className={s.nav}>
-      
-
       <div className={s.burgerWrapper}>
         {isOpen ? (
           <CloseIconButton onClick={() => setIsOpen(false)} />

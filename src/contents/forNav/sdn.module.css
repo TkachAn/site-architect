@@ -1,23 +1,16 @@
 /* --- БАЗОВЫЙ НАВ (Mobile First) --- */
-
-
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Лого слева, бургер справа */
+  justify-content: space-between; /*  */
   padding: 0 20px;
   height: 60px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #eee;
-  /*width: 100%;
-  /*position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;*/
+  background-color: var(--bg-header, #128277);
+  border-bottom: 1px solid var(--clr-border, #eee);
 }
 
 .logo {
+  color: var(--clr-bg-font-l, #fff);
   font-weight: 800;
   font-size: 1.2rem;
   letter-spacing: 1px;
@@ -33,11 +26,11 @@
 /* --- ВЫПАДАЮЩЕЕ МЕНЮ (Mobile) --- */
 .menuList {
   position: fixed;
-  top: 60px; /* Сразу под хедером */
+  top: var(--header-h, 60px); /* Сразу под хедером */
   left: -100%; /* Скрыто слева */
   width: 80%; /* Не на весь экран, чтобы оставить воздух */
-  height: calc(100vh - 60px);
-  background-color: #ffffff;
+  height: calc(100vh - var(--header-h, 60px)); /* Высота экрана минус высота хедера */
+  background-color: var(--bg-main, #fff);
   flex-direction: column;
   padding: 40px 20px;
   list-style: none;
@@ -57,7 +50,7 @@
 
 .link {
   text-decoration: none;
-  color: #333;
+  color: var(--clr-font-l, #fff);
   font-size: 1.3rem;
   font-weight: 700;
   display: block;
@@ -65,7 +58,7 @@
 
 .overlay {
   position: fixed;
-  top: 60px;
+  top: var(--header-h, 61px);
   left: 0;
   width: 100vw;
   height: 100vh;

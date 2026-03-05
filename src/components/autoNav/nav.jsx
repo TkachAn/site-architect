@@ -1,60 +1,18 @@
 import React, { useEffect, useState } from "react";
 import s from "./Anav.module.css";
 
-export function AutoAnchorNav1() {
-  const [anchors, setAnchors] = useState([]);
-
-  useEffect(() => {
-    // Ищем секции и статьи с ID
-    const elements = document.querySelectorAll("section[id], article[id]");
-
-    const foundAnchors = Array.from(elements).map((el) => ({
-      id: el.id,
-      // Сохраняем тип тега (SECTION или ARTICLE)
-      type: el.tagName.toLowerCase(),
-      title:
-        el.querySelector("h1, h2, h3")?.innerText ||
-        el.getAttribute("title") ||
-        el.id,
-    }));
-
-    setAnchors(foundAnchors);
-  }, []);
-
-  if (anchors.length === 0) return null;
-
-  return (
-    <nav className={s.anchorNav}>
-      <details className={s.mobileDetails}>
-        <summary className={s.summary}>Выбрать раздел</summary>
-        <ul className={s.list}>
-          {anchors.map((anchor) => (
-            <li key={anchor.id} className={s.item}>
-              <a
-                href={`#${anchor.id}`}
-                className={
-                  anchor.type === "section" ? s.link_section : s.link_article
-                }
-              >
-                {anchor.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </details>
-    </nav>
-  );
-}
 export function AutoAnchorNav() {
   const [anchors, setAnchors] = useState([]);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // 1. Следим за размером экрана
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    // 1. Определение типа экрана
+    const handleResize = () => setIsMobile(window.innerWidth < 1038);
+    handleResize(); // Инициализация при монтировании
+
     window.addEventListener("resize", handleResize);
 
-    // 2. Собираем анкоры (твой текущий код)
+    // 2. Сбор анкоров: ищем все секции и статьи с ID
     const elements = document.querySelectorAll("section[id], article[id]");
     const foundAnchors = Array.from(elements).map((el) => ({
       id: el.id,
@@ -68,6 +26,9 @@ export function AutoAnchorNav() {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Если анкоров нет, ничего не рендерим
+  if (anchors.length === 0) return null;
 
   const NavList = (
     <ul className={s.list}>

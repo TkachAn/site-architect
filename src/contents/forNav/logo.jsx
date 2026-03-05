@@ -1,3 +1,5 @@
+import s from "./sdn.module.css";
+
 export const Logo = () => {
-  return <div className="logo">ARCH.ENGINE</div>;
+  return <div className={s.logo}>ARCH.ENGINE</div>;
 };

@@ -1,15 +1,29 @@
 import { Section } from "../../components/stsuct/sections/sections";
 import s from "./s.module.css";
 import { Layout } from "../layout";
+import { Link } from "react-router-dom"; // если используешь React Router
+import { useLocation } from "react-router-dom";
 
-export function NotFound() {
+export function NotFound({ statusCode = 404 }) {
+  const messages = {
+    400: "Сервер не смог разобрать ваш запрос. Возможно, ошибка в адресе или параметрах.",
+    401: "Требуется авторизация. Пожалуйста, войдите в аккаунт.",
+    403: "У вас нет прав для просмотра этой страницы.",
+    404: "Страница не найдена. Возможно, ссылка устарела или была удалена.",
+    429: "Слишком много запросов. Попробуйте немного позже.",
+  };
+const location = useLocation();
+const reportUrl = `mailto:support@ваш-сайт.com?subject=Ошибка 404&body=Страница не
+        найдена: ${window.location.href}`;
+  const title = messages[statusCode] || "Что-то пошло не так";
   return (
     <Layout>
-      <Section title="Страница не найдена">
+      <Section title={title}>
         {/* s.notFound для центрирования и базового оформления */}
         <div className={s.notFound}>
-          {/* Код ошибки крупным планом */}
-          <h1 className={s.errorCode}>404</h1>
+          {/* Код ошибки крупным планом <div className={s.errorCode}>{statusCode}</div>*/}
+
+          <h1 className={s.errorCode}>{statusCode}</h1>
 
           {/* Основное сообщение */}
           <p className={s.message}>Упс! Похоже, вы заблудились.</p>
@@ -25,12 +39,24 @@ export function NotFound() {
             Вернуться на Главную страницу
           </a>
 
-          {/* Дополнительный элемент: поле поиска */}
-          {/* <div className={s.searchContainer}>
-                    <input type="text" placeholder="Поиск по сайту..." className={s.searchInput} />
-                    <button className={s.searchButton}>Искать</button>
-                </div> */}
+        
         </div>
+        
+        <p>
+          Это ошибка на стороне клиента (4xx). Сервер в порядке, проблема в
+          запросе.
+        </p>
+        {statusCode === 404 && (
+          <p>
+            Наиболее вероятные причины:
+            <br />• опечатка в адресе
+            <br />• удалённая / перемещённая страница
+            <br />• битая ссылка с другого сайта
+          </p>
+        )}
+        
+        
+        
       </Section>
     </Layout>
   );

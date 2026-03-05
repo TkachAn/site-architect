@@ -10,6 +10,7 @@ import {
   Plus,
   UserPlus,
   UserPen,
+  LogIn,
   LogOut,
 } from "lucide-react";
 
@@ -30,6 +31,12 @@ const BaseIconButton = forwardRef(
 );
 
 BaseIconButton.displayName = "BaseIconButton";
+
+export const LoginIconButton = forwardRef(({ size = 24, ...props }, ref) => (
+  <BaseIconButton ref={ref} {...props} title={props.title || "Войти"}>
+    <LogIn size={size} />
+  </BaseIconButton>
+));
 
 export const CloseIconButton = forwardRef(({ size = 24, ...props }, ref) => (
   <BaseIconButton ref={ref} {...props} title={props.title || "Закрыть"}>

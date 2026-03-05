@@ -1,12 +1,15 @@
-.intro {
+.intro{
   font-size: 16px;
   line-height: 1.5;
   color: #333;
   margin-bottom: 20px;
-  padding: 0 20px;
+  padding: 0 20px; /* Отступы для лучшей читаемости на мобилках */
 }
-
-
+.modeList {
+  list-style-type: disc;
+  margin-left: 40px;
+  /* margin-top: 10px; */
+}
 .demoBox {
   display: flex;
   flex-direction: column;

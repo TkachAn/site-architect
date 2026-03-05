@@ -1,7 +1,3 @@
-:root {
-  font-size: 16px;
-  background-color: darkcyan;
-}
 *,
 *::before,
 *::after {
@@ -10,13 +6,54 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+:root {
+  font-size: 1rem;
+  
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Растягивает приложение на всю высоту экрана */
+}
+
+html, body, #root {
+  height: 100%; /* Это критично для min-height: 100vh */
+ margin: 0;
+}
+
+body {
+  /*overflow-x: hidden;/**/
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #acacac;/**/
+  color: var(--color-text-main);
+  line-height: var(--line-height-base);
+}
+
 /* 1.1 Типографика */
-h1, h2, h3, h4, h5, h6 {
-  margin: 10px 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1em 0;
   font-weight: bold;
 }
 
-p, blockquote {
+p,
+blockquote {
   margin-bottom: 10px; /* Отступ снизу для читаемости */
   font-weight: normal; /* Вернул нормальную жирность для текста */
 }
@@ -25,7 +62,8 @@ img {
   max-width: 100%;
   height: auto;
 }
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 a {
@@ -33,49 +71,53 @@ a {
   color: inherit;
   transition: 0.3s; /* Плавность для всех ссылок */
 }
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
   outline: none; /* Убираем стандартную обводку */
-}
-
-body {
-  overflow-x: hidden;
-  width: 100%;
-  -webkit-font-smoothing: antialiased;
-
-   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #acacac;
-  color: var(--color-text-main);
-  line-height: var(--line-height-base);
-}
-#root {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Растягивает приложение на всю высоту экрана */
-
-  --color-primary: #e74c3c;
-  --color-accent: #3498db;
-  --color-accent-dark: #2980b9;
-  --color-text-main: #333333;
-  --color-text-secondary: #666666;
-  --color-background-light: #f8f8f8;
-
-  --spacing-xs: 5px;
-  --spacing-sm: 10px;
-  --spacing-md: 20px;
-  --spacing-lg: 40px;
-
-  --font-size-base: 16px;
-  --line-height-base: 1.5;
-}
-html {
-  scroll-behavior: smooth;
 }
 
 [id] {
   scroll-margin-top: 80px;
 }
+/*
+main {
+background-color: #fff;
+padding: 20px;
+}/* --- Стили для всего приложения --- */
+ /* Сетка и Брейкпоинты 
+  --bp-desktop: 1038px;
+  --bp-ultra: 1380px;
+  --header-h: 61px;
+   --footer-h: 150px;
+  --aside-w: 280px;
+
+  /* Цвета 
+  --clr-bg-font-l: #ffffff;
+  --clr-bg-font-d: #333333;
+
+  --clr-border: #004d47;
+  --clr-hero-grad: linear-gradient(135deg, #0070f3 0%, #9b59b6 100%);
+  --clr-text-main: #ccc;
+  --clr-text-title: #222222;
+  --bg-footer: #004d47;
+  --bg-aside: #52958b;
+  --bg-header: #128277;
+  --bg-main: #b9c4c9;
+  --bg-grid: #52958b;
+  
+
+  --clr-accent-dark: #2980b9;
+
+  --color-background-light: #f8f8f8;
+
+  /* Отступы 
+  --gap-container: 20px;
+  --space-section: 30px;
+ --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 40px;
+*/
