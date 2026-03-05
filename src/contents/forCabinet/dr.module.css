@@ -1,0 +1,37 @@
+/* src/components/base/DataRenderer/DataRenderer.module.css */
+.section {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.1rem;
+  color: #333;
+  text-transform: capitalize;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+
+.group {
+  padding-left: 15px; /* Визуальная вложенность */
+  border-left: 1px solid #ddd;
+}
+
+.item {
+  display: flex;
+  flex-direction: column; /* На мобилках: заголовок над текстом */
+  margin: 8px 0;
+}
+
+.label {
+  font-weight: bold;
+  color: #555;
+  text-transform: capitalize;
+}
+
+@media (min-width: 480px) {
+  .item {
+    flex-direction: row; /* На десктопе: в одну строку */
+    gap: 10px;
+  }
+}

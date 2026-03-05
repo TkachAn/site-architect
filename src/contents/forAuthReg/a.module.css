@@ -1,0 +1,20 @@
+/* src/contents/forAuthReg/auth.module.css */
+.footerLink {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.footerLink a {
+  color: #007bff; /* Твой акцентный цвет */
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+  display: inline-block;
+  padding: 5px; /* Увеличиваем область клика для Mobile First */
+}
+
+.footerLink a:hover {
+  text-decoration: underline;
+}
