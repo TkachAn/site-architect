@@ -196,7 +196,7 @@ min-height: calc(100vh - var(--footer-h, 150px) - var(--header-h, 61px) * 2); /*
   margin-top: auto; /* Толкает футер вниз */
   background-color: var(--bg-footer, #004d47);
   color: var(--clr-bg-font-l, #fff);
-  padding: 20px;
+  padding: 1rem 2rem;
   text-align: center;
   height: var(--footer-h, 150px);
 }
@@ -205,8 +205,8 @@ min-height: calc(100vh - var(--footer-h, 150px) - var(--header-h, 61px) * 2); /*
   display: flex;
   justify-content: center;
   align-items: baseline;
-  gap: 40px;
-  margin-bottom: 30px;
+  gap: 3em;
+  margin-bottom: 1em;
 }
 footer p {
   margin: 0;
@@ -216,9 +216,8 @@ footer p {
 }
 
 .copyright {
-  margin-top: 35px;
   margin-bottom: 0;
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 /*
 .grid {

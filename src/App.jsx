@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { routes } from "./routersConfig"; // Твой конфиг
-import "../globCSS/debag.css";
-import "../globCSS/vars.css";
+import "./globCSS/debag.css";
+import "./globCSS/vars.css";
 
 function App() {
   return (

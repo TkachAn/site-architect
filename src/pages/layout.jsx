@@ -17,7 +17,6 @@ import { LoginIconButton } from "../components/base/buttons/IconButtons";
 import { Modal } from "../components/stsuct/extra/modal/mod";
 import { LoginForm } from "../contents/forAuthReg/loginForm";
 import { DeBag } from "../contents/debag/debag";
-import { Container } from "../components/stsuct/sections/container";
 
 export function Layout({ children }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
