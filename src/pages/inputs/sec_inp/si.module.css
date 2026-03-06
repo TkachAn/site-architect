@@ -1,0 +1,33 @@
+.intro{
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 20px;
+  padding: 0 20px; /* Отступы для лучшей читаемости на мобилках */
+}
+.modeList {
+  list-style-type: disc;
+  margin-left: 40px;
+  /* margin-top: 10px; */
+}
+.demoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 15px 0;
+  border: 1px solid #eee;
+}
+
+.codeBlock {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  overflow-x: auto;
+  text-align: left;
+}
