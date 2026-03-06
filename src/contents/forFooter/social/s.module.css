@@ -1,37 +1,23 @@
-.social{    
-    display:block;
-    /*justify-content: space-between; /* Равномерное распределение иконок по ширине */
-    /*align-items: center; /* Вертикальное выравнивание по центру */          
-    /*height: 100%; /* Чтобы высота была 60px как у родителя */
-    padding: 0 20px; /* Отступы по бокам на мобилках */
-    /*background-color: #f0f0f0; /* Цвет фона для наглядности */          
+/* --- SOCIAL (Sidebar version) --- */
+.socialList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
 
+.socialLink {
+  text-decoration: none;
+  color: var(--clr-link, #0070f3);
+  font-size: 1rem;
+  transition: opacity 0.2s ease;
+  display: inline-block;
+  word-break: break-word; /* На всякий случай для экстремально узких экранов */
 }
-.social h5{
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #0070f3;
-}
-.social ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.social li {
-    margin-bottom: 5px;
-   
-}
-.social span {
-    margin-right: 8px;
-    font-weight: 600;
-    color: #0070f3;
-    font-size: 18px;
-}
-.social a {
-    
-    text-decoration: none;
-}
-.social a:hover {
-    text-decoration: underline;
+
+.socialLink:hover {
+  opacity: 0.7;
+  text-decoration: underline;
 }

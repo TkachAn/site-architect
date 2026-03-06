@@ -18,7 +18,7 @@ import { Modal } from "../components/stsuct/extra/modal/mod";
 import { LoginForm } from "../contents/forAuthReg/loginForm";
 import { DeBag } from "../contents/debag/debag";
 
-export function Layout({ children }) {
+export function Layout({ children, title }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -35,7 +35,7 @@ export function Layout({ children }) {
           <AutoAnchorNav />
         </AsideLeft>
 
-        <Main>
+        <Main title={title}>
           {children}
           <DeBag />
         </Main>

@@ -1,31 +1,19 @@
 import { About } from "./pages/about.jsx";
 import { Contacts } from "./pages/contacts.jsx";
 import { Home } from "./pages/home.jsx";
-import { Lab } from "./pages/lab.jsx";
-import { Lab2 } from "./pages/lab2.jsx";
 import { NotFound } from "./pages/notfound/notFound.jsx";
 import { ErrorsPage } from "./pages/errors.jsx";
 import { RegPage } from "./pages/registration.jsx";
 import { AuthPage } from "./pages/authorization.jsx";
 import { Cabinet } from "./pages/cabinet.jsx";
+import { InputsContent } from "./pages/inputs/sec_inp/inpG.jsx";
+import { InputsPage } from "./pages/inputs/inputsPage.jsx";
 
 export const routes = [
   {
     path: "/",
     element: <Home />,
     title: "Главная",
-    showInMenu: true,
-  },
-  {
-    path: "/Lab",
-    element: <Lab />,
-    title: "Личный кабинет",
-    showInMenu: true,
-  },
-  {
-    path: "/lab2",
-    element: <Lab2 />,
-    title: "Лабораторная 2",
     showInMenu: true,
   },
   {
@@ -55,7 +43,7 @@ export const routes = [
   },
   {
     path: "/inputs",
-    element: <RegPage />,
+    element: <InputsPage/>,
     title: "Компоненты ввода",
     showInMenu: false,
   },

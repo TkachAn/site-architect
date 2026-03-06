@@ -3,22 +3,24 @@ import s from "./s.module.css";
 export function Social() {
   return (
     <div className={s.social}>
-      <h5>Follow Us</h5>
-      <ul>
+      <h5 className={s.aside_title}>Follow Us</h5>
+      <ul className={s.socialList}>
         <li>
-          <span>Facebook: </span>
-          <a href="https://facebook.com">facebook.com/yourpage</a>
+          <a href="https://facebook.com/yourpage" className={s.socialLink}>
+            Facebook
+          </a>
         </li>
         <li>
-          <span>Twitter: </span>
-            <a href="https://twitter.com">twitter.com/yourpage</a>
+          <a href="https://twitter.com/yourpage" className={s.socialLink}>
+            Twitter
+          </a>
         </li>
         <li>
-          <span>Instagram: </span>
-          <a href="https://instagram.com">instagram.com/yourpage</a>
+          <a href="https://instagram.com/yourpage" className={s.socialLink}>
+            Instagram
+          </a>
         </li>
       </ul>
     </div>
   );
 }
-

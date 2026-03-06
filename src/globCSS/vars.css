@@ -11,6 +11,13 @@
   --clr-bg-font-d: #738488; /*#333333;*/
   --clr-font-l: #ffffff;
   --clr-font-d: #333333;
+  --clr-h1-d: #2980b9;
+  --clr-h1-l: #fff;
+  --clr-h2-d: #333; /*#333333;*/
+  --clr-h2-l: #fff;     
+  --clr-link-d: #0070f3;
+  --clr-link-l: #0070f3;
+  --clr-icon-d: #333;
 
   --clr-icon-l: #fff;
 
@@ -21,7 +28,7 @@
   --bg-header: #a6b6ba; /*#D0D8DA; /* #128277;*/
   --bg-aside: #e1ddd7; /*#52958b;*/
   --bg-grid: #e1ddd7; /*#52958b;*/
-  --bg-main: #efece7; /*#b9c4c9;*/
+  --bg-main: #b9c4c9;/* #efece7; /* */
   --bg-section: #efece7; /*#52958b;*/
   --bg-article: #f9f9f9; /*#52958b;*/
   --bg-footer: #a6b6ba; /* #004d47;*/

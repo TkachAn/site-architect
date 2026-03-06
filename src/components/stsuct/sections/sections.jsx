@@ -10,14 +10,19 @@ export function Header({ children, id }) {
   );
 }
 
-export function Main({ children }) {
-  return <main className={s.main}>{children}</main>;
+export function Main({ children, title }) {
+  return (
+    <main className={s.main}>
+      <h1>{title}</h1>
+      {children}
+    </main>
+  );
 }
 
 export function Hero({ children, title = "HERO", id }) {
   return (
     <section id={id} className={s.hero} title={title}>
-      <div className={s.heroContent}>{children}</div>
+      {children}
     </section>
   );
 }
@@ -38,7 +43,7 @@ export function Section({ children, title, id, className }) {
 /* ВОЗВРАЩЕНО: Используем Container для сетки, как и было в оригинале */
 export function Grid({ children, id, className }) {
   return (
-    <Container >
+    <Container>
       <div id={id} className={`${s.grid} ${className || ""}`}>
         {children}
       </div>
