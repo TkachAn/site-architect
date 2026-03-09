@@ -51,6 +51,16 @@ export function Grid({ children, id, className }) {
   );
 }
 
+export function Wrapper({ children, id, className }) {
+  return (
+    <Container>
+      <div id={id} className={`${s.wrapper} ${className || ""}`}>
+        {children}
+      </div>
+    </Container>
+  );
+}
+
 export function Flex({ children, id, className }) {
   return (
     <div id={id} className={`${s.flex} ${className || ""}`}>

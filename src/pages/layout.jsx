@@ -6,6 +6,7 @@ import {
   AsideLeft,
   AsideRight,
   Footer,
+  Wrapper,
 } from "../components/stsuct/sections/sections";
 import { DinNav } from "../contents/forNav/DinNav";
 import { AutoAnchorNav } from "../components/autoNav/nav";
@@ -29,7 +30,7 @@ export function Layout({ children, title }) {
         <LoginIconButton onClick={() => setIsModalOpen(true)} />
       </Header>
 
-      <Grid>
+      <Wrapper>
         {/* На Desktop (>1200px) здесь появится боковая панель */}
         <AsideLeft>
           <AutoAnchorNav />
@@ -43,7 +44,7 @@ export function Layout({ children, title }) {
         <AsideRight>
           <Social />
         </AsideRight>
-      </Grid>
+      </Wrapper>
 
       <Footer>
         <Address />

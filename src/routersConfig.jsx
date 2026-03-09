@@ -6,8 +6,8 @@ import { ErrorsPage } from "./pages/errors.jsx";
 import { RegPage } from "./pages/registration.jsx";
 import { AuthPage } from "./pages/authorization.jsx";
 import { Cabinet } from "./pages/cabinet.jsx";
-import { InputsContent } from "./pages/inputs/sec_inp/inpG.jsx";
 import { InputsPage } from "./pages/inputs/inputsPage.jsx";
+import { StructPage } from "./pages/struct/strPage.jsx";
 
 export const routes = [
   {
@@ -37,8 +37,8 @@ export const routes = [
   },
   {
     path: "/structure",
-    element: <RegPage />,
-    title: "Регистрация",
+    element: <StructPage />,
+    title: "Структура страницы",
     showInMenu: false,
   },
   {

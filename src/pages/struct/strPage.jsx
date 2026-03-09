@@ -1,11 +1,12 @@
 import { Layout } from "../layout";
+import { StructContent } from "./content/struct";
 
 
 
-export function Structure() {
+export function StructPage() {
   return (
-    <Layout>
-        <h2>Страница для ПК</h2>
+    <Layout title="Структура страницы">
+        <StructContent />
     </Layout>
   );
 }

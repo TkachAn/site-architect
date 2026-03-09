@@ -1,12 +1,3 @@
-/* --- GRID (Хозяин ширины) --- */
-.grid {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding-top: var(--header-h, 61px);
-  min-height: calc(100vh - var(--footer-h, 150px)); /* Вычитаем высоту футера */
-}
-
 /* --- HEADER --- */
 header {
   position: fixed;
@@ -25,6 +16,14 @@ header {
   align-items: center;
   height: 100%; /* Чтобы высота была 60px как у родителя */
   padding: 0 2rem; /* Отступы по бокам на мобилках */
+}
+/* --- GRID (Хозяин ширины) --- */
+.grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: var(--header-h, 61px);
+  min-height: calc(100vh - var(--footer-h, 150px)); /* Вычитаем высоту футера */
 }
 /* --- MAIN --- */
 .main {
@@ -86,7 +85,7 @@ header {
     height: auto; /* Высота теперь зависит только от контента */
     align-self: start; /* Важно: панель не растягивается по высоте соседа */ /*height: fit-content; /* Панель будет высотой ровно по своему контенту */
   }
-  .grid {
+  .grid, .wrapper {
     display: grid;
     width: 100%;
     padding-top: var(--header-h, 61px);
@@ -103,7 +102,7 @@ header {
     display: block;
     padding-top: 40px; /* Отступ сверху для правой панели */
   }
-  .grid {
+  .grid, .wrapper {
     grid-template-columns: 280px 1fr 280px; /* Ultra-Wide */
   }
   .asideRight {
@@ -119,6 +118,7 @@ header {
   /*border: 1px solid var(--clr-border, #eee);/**/
   padding: 20px;/**/
   margin-bottom: 30px;/**/
+  text-align: left;
 }
 .section_title {
   font-size: 22px;
@@ -127,12 +127,14 @@ header {
   color: #222;
   text-align: center;
 }
+
 .article {
   padding: 1.5em;
   background: var(--bg-article, #fff);
   border: 1px solid var(--clr-border, #f0f0f0);
   border-radius: 4px;
   margin-bottom: 1.5rem;
+  text-align: left;
 }
 .article_title {
   font-size: 1em;
@@ -229,13 +231,3 @@ footer p {
   margin-bottom: 0;
   font-size: 0.8rem;
 }
-/*
-.grid {
-  display: grid;
-  width: 100%;
-  padding-top: var(--header-h, 40px);
-  background-color: var(--bg-grid, #f0f0f0);
-  min-height: calc(100vh - var(--footer-h, 150px));
-  align-content: start; /**/
-/*grid-template-columns: 1fr; /* Mobile */ /*
-}/*/ /**/

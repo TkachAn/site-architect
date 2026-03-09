@@ -14,18 +14,13 @@ import { useState, useEffect } from "react";
 import s from "./si.module.css";
 export const InputsContent = () => {
    const [lastAction, setLastAction] = useState("Нажмите на любую кнопку...");
-    const [isDebug, setIsDebug] = useState(false);
+    
    const handleAction = (msg) =>
      setLastAction(`Событие: ${msg} (${new Date().toLocaleTimeString()})`);
      useEffect(() => {
        return () => document.body.classList.remove("show-debug");
      }, []);
    
-    const toggleDebug = () => {
-      setIsDebug(!isDebug);
-      document.body.classList.toggle("show-debug");
-      handleAction(isDebug ? "Debug выключен" : "Debug включен");
-    };
   return (
     <>
       <Section title="TextInput" id="text-fields">
@@ -65,9 +60,9 @@ export const InputsContent = () => {
             Идеально <b>для артикулов и системных ID</b>.
           </p>
           <TextInput label="Clasic Case" placeholder="enter text here" />
-          <div className={s.codeBlock}>
+          <pre className={s.codeBlock}>
             {`<TextInput label="Clasic Case" placeholder="enter text here" />`}
-          </div>
+          </pre>
         </Article>
 
         <Article id="camel-case" title="camelCase" className={s.demoBox}>
@@ -82,9 +77,9 @@ export const InputsContent = () => {
             mode="camelCase"
             placeholder="enter code generators or keys here"
           />
-          <div className={s.codeBlock}>
+          <pre className={s.codeBlock}>
             {`<TextInput label="Camel Case" mode="camelCase" placeholder="enter code generators or keys here" />`}
-          </div>
+          </pre>
         </Article>
 
         <Article id="snake-case" title="Snake_case" className={s.demoBox}>
@@ -98,9 +93,9 @@ export const InputsContent = () => {
             mode="snake_case"
             placeholder="enter settings or environment variables here"
           />
-          <div className={s.codeBlock}>
+          <pre className={s.codeBlock}>
             {`<TextInput label="Snake Case" mode="snake_case" placeholder="enter settings or environment variables here" />`}
-          </div>
+          </pre>
         </Article>
       </Section>
 
@@ -126,9 +121,9 @@ export const InputsContent = () => {
             placeholder="Лишние пробелы исчезнут при Blur"
             rows={2}
           />
-          <div className={s.codeBlock}>
+          <pre className={s.codeBlock}>
             {`<TextAreaInput label="Super Clean Area" placeholder="Лишние пробелы исчезнут при Blur" rows={2} />`}
-          </div>
+          </pre>
         </Article>
       </Section>
 
@@ -143,9 +138,9 @@ export const InputsContent = () => {
             <b>EmailInput:</b> Авто-удаление пробелов и проверка формата @.
           </p>
           <EmailInput label="Ваш Email" placeholder="example@mail.com" />
-          <div className={s.codeBlock}>
+          <pre className={s.codeBlock}>
             {`<EmailInput label="Email" placeholder="example@mail.com" />`}
-          </div>
+          </pre>
           <p>
             <b>EmailInput + Confirm Mode:</b> Добавляет поле проверки.
           </p>
@@ -154,9 +149,9 @@ export const InputsContent = () => {
             placeholder="example@mail.com"
             confirm={true}
           />
-          <div className={s.codeBlock}>
+          <pre className={s.codeBlock}>
             {`<EmailInput label="Email" placeholder="example@mail.com" confirm={true} />`}
-          </div>
+          </pre>
         </Article>
 
         <Article
@@ -169,16 +164,16 @@ export const InputsContent = () => {
             валидация.
           </p>
           <PasswordInput label="Введите пароль" />
-          <div className={s.codeBlock}>
+          <pre className={s.codeBlock}>
             {`<PasswordInput label="Пароль" />`}
-          </div>
+          </pre>
           <p>
             <b>Confirm Mode:</b> Добавляет поле проверки.
           </p>
           <PasswordInput label="Новый пароль" confirm={true} />
-          <div className={s.codeBlock}>
+          <pre className={s.codeBlock}>
             {`<PasswordInput label="Пароль" confirm={true} />`}
-          </div>
+          </pre>
         </Article>
       </Section>
 
@@ -192,9 +187,9 @@ export const InputsContent = () => {
             <b>IntegerInput:</b> Только целые числа. Запрещает ведущие нули.
           </p>
           <IntegerInput label="Количество" placeholder="0" />
-          <div className={s.codeBlock}>
+          <pre className={s.codeBlock}>
             {`<IntegerInput label="Количество" />`}
-          </div>
+          </pre>
         </Article>
 
         <Article id="price-input" title="PriceInput" className={s.demoBox}>
@@ -202,7 +197,7 @@ export const InputsContent = () => {
             <b>PriceInput:</b> Форматирует ввод в денежный вид (1 000.00).
           </p>
           <PriceInput label="Стоимость услуги" />
-          <div className={s.codeBlock}>{`<PriceInput label="Цена" />`}</div>
+          <pre className={s.codeBlock}>{`<PriceInput label="Цена" />`}</pre>
         </Article>
 
         <Article id="float-input" title="FloatInput" className={s.demoBox}>
@@ -210,9 +205,9 @@ export const InputsContent = () => {
             <b>FloatInput:</b> Строгий ввод чисел с плавающей точкой.
           </p>
           <FloatInput label="Коэффициент" placeholder="0.00" />
-          <div className={s.codeBlock}>
+          <pre className={s.codeBlock}>
             {`<FloatInput label="Вес" placeholder="0.00" />`}
-          </div>
+          </pre>
         </Article>
       </Section>
     </>
