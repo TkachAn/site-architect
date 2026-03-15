@@ -1,0 +1,84 @@
+.heroWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.heroImage img {
+  padding: 10px;
+  max-width: 450px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.heroText h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.heroText h2 {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+}
+
+.heroText p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  /*max-width: 320px;*/
+}
+.list{
+    display: flex;
+  flex-direction: column;
+
+    list-style: disc;
+    padding-left: 40px;
+    gap:10px;
+}
+.list>li{
+    padding-left: 10px;
+    gap:10px;
+}
+
+
+@media (min-width: 768px) {
+  .heroWrapper {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  /*
+  .heroImage img {
+    width: 200px;
+    height: 200px;
+  }
+*/
+
+  .heroImage img {
+    width: clamp(200px, 25vw, 300px);
+    /* плавное масштабирование изображения */
+    height: auto;
+    /* сохраняем пропорции */
+  }
+
+  .heroText h1 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+
+  .heroText h2 {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  }
+
+  .heroText p {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    max-width: 480px;
+  }
+}

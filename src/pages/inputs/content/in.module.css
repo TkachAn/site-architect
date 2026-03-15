@@ -1,0 +1,26 @@
+/* Контейнер для визуальной демонстрации компонента */
+.demoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 15px 0;
+  border: 1px solid #eee;
+ /* min-width: 0;/**/
+}
+/* Оформление блоков с кодом */
+.codeBlock {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 6px;
+  font-family: 'Fira Code','Courier New', Courier, monospace;
+  font-size: 13px;
+  overflow-x: auto;
+  text-align: left;
+  line-height: 1.4;
+  /*max-width: 100%; 
+  display: block;*/
+}
