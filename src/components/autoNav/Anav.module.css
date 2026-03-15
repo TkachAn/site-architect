@@ -20,21 +20,11 @@
   gap: 10px;
 }
 /*
-.link {
-  text-decoration: none;
-  color: #fff;
-  font-size: 0.9rem;
-  transition: color 0.2s;
-}
-*/
-.link:hover {
-  color: #000;
-}
 
 /* Ссылка на Секцию (Верхний уровень) */
 .link_section {
   text-decoration: none;
-  color: #0070f3;
+  color: var(--clr-aside-1, #0070f3);
   font-weight: bold; /* Жирный шрифт для разделов */
   font-size: 1rem;
   display: block;
@@ -44,7 +34,7 @@
 /* Ссылка на Артикль (Вложенный уровень) */
 .link_article {
   text-decoration: none;
-  color: #555;
+  color: var(--clr-aside-2,#fff);
   font-weight: normal;
   font-size: 0.9rem;
   display: block;
@@ -55,75 +45,5 @@
 }
 
 .link_section:hover, .link_article:hover {
-  color: #000;
+  color: #fff;
 }
-
-
-/* TABLET: В строчку под хедером *
-@media (min-width: 768px) and (max-width: 1038px) {
-  .anchorNav {
-    width: 100%;
-    
-  }
-  .list {
-    flex-direction: row; /* Твоё условие: строчка *
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-}/**/
-
-/* DESKTOP: Снова в столбик, так как мы внутри AsideLeft *
-@media (min-width: 1038px) {
-  .anchorNav {
-    background: transparent;
-    padding: 20px;
-  }
-  .list {
-    flex-direction: column;
-  }
-}
-
-/* TABLET: Когда меню выстраивается в ряд (от 768px до 1038px) 
-@media (min-width: 768px) and (max-width: 1038px) {
-  /* Очищаем контейнер от стилей спойлера 
-  .mobileDetails, 
-  .anchorNav {
-    display: block;
-    width: 100%;
-    background: transparent;
-  }
-
-  .list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px 20px; /* Отступы: 10px между строками, 20px между словами *
-    padding: 10px 0;
-  }/**
-
-  .item {
-    display: flex;
-    align-items: center;
-  }
-
-  /* Сбрасываем все лесенки и жирность *
-  .link_section, 
-  .link_article {
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    font-weight: normal !important;
-    font-size: 0.9rem;
-    white-space: nowrap; /* Чтобы слова не рвались *
-  }
-
-  /* Вертикальная черта только МЕЖДУ элементами *
-  .item:not(:last-child)::after {
-    content: "";
-    width: 1px;
-    height: 14px;
-    background: #ccc;
-    margin-left: 20px; /* Расстояние до черты *
-    display: inline-block;
-  }
-}/**/

@@ -2,7 +2,6 @@ import { useState } from "react";
 import {
   Header,
   Main,
-  Grid,
   AsideLeft,
   AsideRight,
   Footer,
@@ -19,7 +18,7 @@ import { Modal } from "../components/stsuct/extra/modal/mod";
 import { LoginForm } from "../contents/forAuthReg/loginForm";
 import { DeBag } from "../contents/debag/debag";
 
-export function Layout({ children, title }) {
+export function Layout({ children, title, al_title, ar_title, sw_h1 = "true" }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -32,16 +31,16 @@ export function Layout({ children, title }) {
 
       <Wrapper>
         {/* На Desktop (>1200px) здесь появится боковая панель */}
-        <AsideLeft>
+        <AsideLeft title={al_title}>
           <AutoAnchorNav />
         </AsideLeft>
 
-        <Main title={title}>
+        <Main title={title} sw={sw_h1}>
           {children}
           <DeBag />
         </Main>
         {/*<AsideRight><p>Боковая панель справа</p>  </AsideRight>*/}
-        <AsideRight>
+        <AsideRight title={ar_title}>
           <Social />
         </AsideRight>
       </Wrapper>

@@ -1,6 +1,11 @@
 // src/components/strucGrig/Section/Section.jsx
-import { Container } from "./container";
-import s from "./s.module.css"; // Используем основной файл стилей
+//import { Container } from "./container";
+import s from "./s.module.css";
+
+
+export function Container({ children, className }) {
+  return <div className={`${s.container} ${className || ""}`}>{children}</div>;
+}
 
 export function Header({ children, id }) {
   return (
@@ -10,37 +15,6 @@ export function Header({ children, id }) {
   );
 }
 
-export function Main({ children, title }) {
-  return (
-    <main className={s.main}>
-      <h1>{title}</h1>
-      {children}
-    </main>
-  );
-}
-
-export function Hero({ children, title = "HERO", id }) {
-  return (
-    <section id={id} className={s.hero} title={title}>
-      {children}
-    </section>
-  );
-}
-
-export function Section({ children, title, id, className }) {
-  return (
-    <section
-      id={id}
-      className={`${s.section} ${className || ""}`}
-      title={title}
-    >
-      {title && <h2 className={s.section_title}>{title}</h2>}
-      {children}
-    </section>
-  );
-}
-
-/* ВОЗВРАЩЕНО: Используем Container для сетки, как и было в оригинале */
 export function Grid({ children, id, className }) {
   return (
     <Container>
@@ -69,6 +43,37 @@ export function Flex({ children, id, className }) {
   );
 }
 
+export function Main({ children, title, sw }) {
+  return (
+    <main className={s.main}>
+      {!sw && <h1 className={s.sw_h1}>{title}</h1>}
+      
+      {children}
+    </main>
+  );
+}
+
+export function Hero({ children, id }) {
+  return (
+    <section id={id} className={s.hero} title="HERO">
+      {children}
+    </section>
+  );
+}
+
+export function Section({ children, title, id, className }) {
+  return (
+    <section
+      id={id}
+      className={`${s.section} ${className || ""}`}
+      title={title}
+    >
+      {title && <h2 className={s.section_title}>{title}</h2>}
+      {children}
+    </section>
+  );
+}
+
 export function Article({ children, title, id, className }) {
   return (
     <article
@@ -82,17 +87,27 @@ export function Article({ children, title, id, className }) {
   );
 }
 
-export function AsideLeft({ children, id, className }) {
+export function AsideLeft({ title, children, id, className }) {
   return (
-    <aside id={id} className={`${s.asideLeft} ${className || ""}`}>
+    <aside
+      id={id}
+      className={`${s.asideLeft} ${className || ""}`}
+      title={title}
+    >
+      {title && <h3 className={s.article_title}>{title}</h3>}
       {children}
     </aside>
   );
 }
 
-export function AsideRight({ children, id, className }) {
+export function AsideRight({ title, children, id, className }) {
   return (
-    <aside id={id} className={`${s.asideRight} ${className || ""}`}>
+    <aside
+      id={id}
+      className={`${s.asideRight} ${className || ""}`}
+      title={title}
+    >
+      {title && <h3 className={s.article_title}>{title}</h3>}
       {children}
     </aside>
   );
@@ -109,8 +124,4 @@ export function Footer({ children }) {
       </Container>
     </footer>
   );
-}
-
-export function PaddingBox({ children, className }) {
-  return <div className={`${s.box} ${className || ""}`}>{children}</div>;
 }

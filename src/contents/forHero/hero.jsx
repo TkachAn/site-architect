@@ -8,18 +8,6 @@ export default function HeroSlider() {
 const [direction, setDirection] = useState("slideNext");
   const data = [
     {
-      label: "Semantic Design",
-      title: "Semantic Web Design",
-      desc: "Проектирование интерфейсов через призму семантической точности. Логика данных, определяющая архитектуру.",
-      btn: "Исследовать систему",
-    },
-    {
-      label: "Component Engineering",
-      title: "Component Engineering",
-      desc: "Проектирование интерфейсов через призму семантической точности. Логика данных, определяющая архитектуру.",
-      btn: "Исследовать систему",
-    },
-    {
       label: "Architecture",
       title: "Архитектура WEB-компонентов",
       desc: "Системный подход к разработке: от базовой разметки до сложных интерактивных моделей валидации.",
@@ -30,6 +18,18 @@ const [direction, setDirection] = useState("slideNext");
       title: "ARCH.ENGINE",
       desc: "Экспериментальная среда для создания масштабируемых UI-решений с глубокой семантической проработкой.",
       btn: "Запустить тесты",
+    },
+    {
+      label: "Semantic Design",
+      title: "Semantic Web Design!",
+      desc: "Проектирование интерфейсов через призму семантической точности. Логика данных, определяющая архитектуру.",
+      btn: "Исследовать систему",
+    },
+    {
+      label: "Component Engineering",
+      title: "Component Engineering",
+      desc: "Проектирование интерфейсов через призму семантической точности. Логика данных, определяющая архитектуру.",
+      btn: "Исследовать систему",
     },
   ];
 
@@ -49,7 +49,6 @@ const [direction, setDirection] = useState("slideNext");
         <button onClick={() => move(1)} className={`${s.navZone} ${s.next}`}>
           &#10095;
         </button>
-
         <div className={s.container}>
           <div key={step} className={`${s.content} ${direction}`}>
             <div className={s.meta}>

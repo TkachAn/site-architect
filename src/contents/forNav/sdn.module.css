@@ -6,7 +6,7 @@
   padding: 0 20px;
   height: 60px;
   background-color: var(--bg-header, #128277);
-  border-bottom: 1px solid var(--clr-border, #eee);
+  /*border-bottom: 1px solid var(--clr-border, #eee);/**/
 }
 
 .logo {

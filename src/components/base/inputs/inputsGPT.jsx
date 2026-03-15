@@ -369,67 +369,7 @@ export const PhoneInput = forwardRef(
     );
   },
 );
-/* =========================
-   EMAIL / PASSWORD
-========================= *//*
-export const EmailInput = forwardRef(
-  (
-    {
-      label = "E-mail",
-      confirm,
-      value,
-      defaultValue,
-      onChange,
-      onStatusChange, // Приходит от Forma
-      name, // Важно для отчета
-      required, // Важно для валидности
-      ...props
-    },
-    ref,
-  ) => {
-    const isControlled = value !== undefined;
-    const [localValue, setLocalValue] = useState(defaultValue || "");
-    const [error, setError] = useState("");
-    const currentValue = isControlled ? value : localValue;
 
-    const handleChange = (e) => {
-      const v = e.target.value.replace(/\s/g, "");
-      if (!isControlled) setLocalValue(v);
-      setError(validators.email(v));
-      onChange?.(e);
-    };
-
-    const inputEl = (
-      <input
-        ref={ref}
-        type="email"
-        name={name} // Обязательно передаем name в сам input
-        className={styles.input}
-        value={currentValue}
-        onChange={handleChange}
-        {...props}
-      />
-    );
-    return (
-      <BaseInput
-        label={label}
-        error={error}
-        value={currentValue}
-        name={name}
-        required={required}
-        onStatusChange={onStatusChange}
-      >
-        {confirm ? (
-          <ConfirmBlock value={currentValue} confirmLabel="Подтвердите e-mail">
-            {inputEl}
-          </ConfirmBlock>
-        ) : (
-          inputEl
-        )}
-      </BaseInput>
-    );
-  },
-);*/
 export const EmailInput = forwardRef(
   (
     {
@@ -503,82 +443,7 @@ export const EmailInput = forwardRef(
     );
   },
 );
-/*
-export const PasswordInput = forwardRef(
-  (
-    {
-      label = "Пароль",
-      confirm,
-      value,
-      defaultValue,
-      onChange,
-      onStatusChange,
-      name,
-      required,
-      ...props
-    },
-    ref,
-  ) => {
-    const isControlled = value !== undefined;
-    const [localValue, setLocalValue] = useState(defaultValue || "");
-    const [visible, setVisible] = useState(false);
-    const [error, setError] = useState("");
-    const currentValue = isControlled ? value : localValue;
 
-    const handleChange = (e) => {
-      const v = e.target.value;
-      if (!isControlled) setLocalValue(v);
-      setError(validators.password(v));
-      onChange?.(e);
-    };
-
-    const inputType = visible ? "text" : "password";
-    const inputEl = (
-      <div className={styles.passwordWrap}>
-        <input
-          ref={ref}
-          type={inputType}
-          name={name}
-          className={styles.input}
-          value={currentValue}
-          onChange={handleChange}
-          {...props}
-        />
-        <button
-          type="button"
-          className={styles.toggle}
-          onClick={() => setVisible(!visible)}
-        >
-          {visible ? <EyeOff size={18} /> : <Eye size={18} />}
-        </button>
-      </div>
-    );
-
-    return (
-      <BaseInput
-        label={label}
-        error={error}
-        value={currentValue}
-        name={name}
-        required={required}
-        onStatusChange={onStatusChange}
-      >
-        {confirm ? (
-          <ConfirmBlock
-            value={currentValue}
-            type={inputType}
-            confirmLabel="Подтвердите пароль"
-          >
-            {inputEl}
-          </ConfirmBlock>
-        ) : (
-          inputEl
-        )}
-      </BaseInput>
-    );
-  },
-);
-*/
 export const PasswordInput = forwardRef(
   (
     {
@@ -830,6 +695,68 @@ export const PriceInput = forwardRef(
     );
   },
 );
+
+/* =========================
+   EMAIL / PASSWORD
+========================= *//*
+export const EmailInput = forwardRef(
+  (
+    {
+      label = "E-mail",
+      confirm,
+      value,
+      defaultValue,
+      onChange,
+      onStatusChange, // Приходит от Forma
+      name, // Важно для отчета
+      required, // Важно для валидности
+      ...props
+    },
+    ref,
+  ) => {
+    const isControlled = value !== undefined;
+    const [localValue, setLocalValue] = useState(defaultValue || "");
+    const [error, setError] = useState("");
+    const currentValue = isControlled ? value : localValue;
+
+    const handleChange = (e) => {
+      const v = e.target.value.replace(/\s/g, "");
+      if (!isControlled) setLocalValue(v);
+      setError(validators.email(v));
+      onChange?.(e);
+    };
+
+    const inputEl = (
+      <input
+        ref={ref}
+        type="email"
+        name={name} // Обязательно передаем name в сам input
+        className={styles.input}
+        value={currentValue}
+        onChange={handleChange}
+        {...props}
+      />
+    );
+    return (
+      <BaseInput
+        label={label}
+        error={error}
+        value={currentValue}
+        name={name}
+        required={required}
+        onStatusChange={onStatusChange}
+      >
+        {confirm ? (
+          <ConfirmBlock value={currentValue} confirmLabel="Подтвердите e-mail">
+            {inputEl}
+          </ConfirmBlock>
+        ) : (
+          inputEl
+        )}
+      </BaseInput>
+    );
+  },
+);*/
 /* =========================
    PRICE INPUT
 ========================= *
@@ -939,3 +866,80 @@ const ConfirmBlock = ({
     </div>
   );
 };*/
+
+/*
+export const PasswordInput = forwardRef(
+  (
+    {
+      label = "Пароль",
+      confirm,
+      value,
+      defaultValue,
+      onChange,
+      onStatusChange,
+      name,
+      required,
+      ...props
+    },
+    ref,
+  ) => {
+    const isControlled = value !== undefined;
+    const [localValue, setLocalValue] = useState(defaultValue || "");
+    const [visible, setVisible] = useState(false);
+    const [error, setError] = useState("");
+    const currentValue = isControlled ? value : localValue;
+
+    const handleChange = (e) => {
+      const v = e.target.value;
+      if (!isControlled) setLocalValue(v);
+      setError(validators.password(v));
+      onChange?.(e);
+    };
+
+    const inputType = visible ? "text" : "password";
+    const inputEl = (
+      <div className={styles.passwordWrap}>
+        <input
+          ref={ref}
+          type={inputType}
+          name={name}
+          className={styles.input}
+          value={currentValue}
+          onChange={handleChange}
+          {...props}
+        />
+        <button
+          type="button"
+          className={styles.toggle}
+          onClick={() => setVisible(!visible)}
+        >
+          {visible ? <EyeOff size={18} /> : <Eye size={18} />}
+        </button>
+      </div>
+    );
+
+    return (
+      <BaseInput
+        label={label}
+        error={error}
+        value={currentValue}
+        name={name}
+        required={required}
+        onStatusChange={onStatusChange}
+      >
+        {confirm ? (
+          <ConfirmBlock
+            value={currentValue}
+            type={inputType}
+            confirmLabel="Подтвердите пароль"
+          >
+            {inputEl}
+          </ConfirmBlock>
+        ) : (
+          inputEl
+        )}
+      </BaseInput>
+    );
+  },
+);
+*/

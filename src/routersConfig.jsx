@@ -1,4 +1,4 @@
-import { About } from "./pages/about.jsx";
+import { About } from "./pages/about_us/about.jsx";
 import { Contacts } from "./pages/contacts.jsx";
 import { Home } from "./pages/home.jsx";
 import { NotFound } from "./pages/notfound/notFound.jsx";

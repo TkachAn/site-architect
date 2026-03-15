@@ -5,7 +5,7 @@ import {
   Article,
   Flex,  
 } from "../../../components/stsuct/sections/sections";
-import { SchemaHeader, SchemaStruct } from "./codeBlocks";
+import { SchemaHeader, SchemaSection, SchemaStruct, SchemaArticle, SchemaAside, SchemaFlex, SchemaGrid, SchemaHero, SchemaFooter} from "./codeBlocks";
 
 export function StructContent() {
   // Состояние для переключения визуальной схемы
@@ -40,10 +40,9 @@ export function StructContent() {
                   checked={viewMode === "mobile"}
                   onChange={(e) => setViewMode(e.target.value)}
                 />
-                Mobile
+                <b>Mobile:</b> Все блоки (Aside, Main) выстраиваются вертикально
+                в одну колонку.
               </label>
-              <b>Mobile:</b> Все блоки (Aside, Main) выстраиваются вертикально в
-              одну колонку.
             </li>
             <li>
               <label className={s.switchItem}>
@@ -54,11 +53,9 @@ export function StructContent() {
                   checked={viewMode === "tablet"}
                   onChange={(e) => setViewMode(e.target.value)}
                 />
-                Tablet
+                <b>Tablet:</b> AsideLeft занимает место с лева от Main, а AsideRight под Main
+                или Display:none.
               </label>
-              <b>Tablet:</b> Включается <code>flex-direction: row</code>,
-              AsideLeft занимает место с лева от Main, а AsideRight под Main или
-              Display:none.
             </li>
             <li>
               <label className={s.switchItem}>
@@ -69,14 +66,12 @@ export function StructContent() {
                   checked={viewMode === "desktop"}
                   onChange={(e) => setViewMode(e.target.value)}
                 />
-                Desktop
+                <b>Desktop:</b> Включается <code>flex-direction: row</code>,
+                Aside занимают свои места по бокам от Main.
               </label>
-              <b>Desktop:</b> Включается <code>flex-direction: row</code>, Aside
-              занимают свои места по бокам от Main.
             </li>
           </ul>
         </Article>
-        
         {/* <div className={s.schemaContainer}>
         ВИЗУАЛЬНАЯ СХЕМА С ДИНАМИЧЕСКИМ КЛАССОМ */}
         <Article className={getSchemaClass()}>
@@ -111,7 +106,6 @@ export function StructContent() {
           </div>
           <div className={s.schemaFooter}>Footer</div>
         </Article>
-
         <Article title="Схема построения страницы" id="visual-schema">
           <p className={s.intro}>
             Ниже представлена иерархия основных компонентов. Grid выступает
@@ -168,12 +162,7 @@ export function StructContent() {
             </div>
           </div>
 
-          <pre className={s.codeBlock}>
-            {`<Hero title="Главный баннер" id="home-hero">
-  <h1>Заголовок Hero</h1>
-  <p>Текст баннера</p>
-</Hero>`}
-          </pre>
+          < SchemaHero/>
         </Article>
       </Section>
       <Section title="Секция и статьи" id="section-article">
@@ -192,13 +181,8 @@ export function StructContent() {
               Контент секции...
             </div>
           </div>
-          <pre className={s.codeBlock}>
-            {`<Section title="Название раздела" id="section-1">
-  {/* Контент */}
-</Section>`}
-          </pre>
+          < SchemaSection/>
         </Article>
-
         {/* ARTICLE */}
         <Article title="Article" id="article-info">
           <p>
@@ -214,11 +198,7 @@ export function StructContent() {
               Текст или пример кода внутри статьи...
             </div>
           </div>
-          <pre className={s.codeBlock}>
-            {`<Article title="Заголовок статьи" id="art-1">
-  {/* Детализированный контент */}
-</Article>`}
-          </pre>
+          < SchemaArticle/>
         </Article>
         {/* FLEX */}
         <Article title="Flex" id="flex-info">
@@ -233,12 +213,7 @@ export function StructContent() {
               <div style={{ background: "#ddd", padding: "10px" }}>Item 3</div>
             </Flex>
           </div>
-          <pre className={s.codeBlock}>
-            {`<Flex className="custom-gap">
-  <div>1</div>
-  <div>2</div>
-</Flex>`}
-          </pre>
+          < SchemaFlex/>
         </Article>
         {/* GRID */}
         <Article title="Grid" id="grid-info">
@@ -262,12 +237,7 @@ export function StructContent() {
               </div>
             </div>
           </div>
-          <pre className={s.codeBlock}>
-            {`<Grid id="main-grid">
-  <AsideLeft>Меню</AsideLeft>
-  <Main title="Контент" />
-</Grid>`}
-          </pre>
+          < SchemaGrid/>
         </Article>
         {/* ASIDE PANELS */}
         <Article title="Aside (Панели)" id="aside-info">
@@ -294,15 +264,7 @@ export function StructContent() {
               </div>
             </div>
           </div>
-          <pre className={s.codeBlock}>
-            {`<AsideLeft>
-  <nav>Группы ссылок</nav>
-</AsideLeft>
-
-<AsideRight>
-  <Widget />
-</AsideRight>`}
-          </pre>
+          < SchemaAside/>
         </Article>
         {/* FOOTER */}
         <Article title="Footer" id="footer-info">
@@ -311,11 +273,7 @@ export function StructContent() {
             <code>margin-top: auto</code> в базовых стилях, он всегда
             прижимается к низу страницы, даже если контента мало.
           </p>
-          <pre className={s.codeBlock}>
-            {`<Footer>
-  <p>© 2026 Все права защищены</p>
-</Footer>`}
-          </pre>
+          < SchemaFooter/>
         </Article>
       </Section>
     </>

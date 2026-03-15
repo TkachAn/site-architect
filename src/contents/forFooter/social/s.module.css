@@ -7,14 +7,25 @@
   flex-direction: column;
   gap: 0.8rem;
 }
+.asideTitle{
+  text-decoration: none;
+  color: var(--clr-aside-1, #0070f3);
+  font-weight: bold; /* Жирный шрифт для разделов */
+  font-size: 1rem;
+  display: block;
+  margin-top: 12px;
+}
 
 .socialLink {
   text-decoration: none;
-  color: var(--clr-link, #0070f3);
-  font-size: 1rem;
-  transition: opacity 0.2s ease;
-  display: inline-block;
-  word-break: break-word; /* На всякий случай для экстремально узких экранов */
+  color: var(--clr-aside-2,#fff);
+  font-weight: normal;
+  font-size: 0.9rem;
+  display: block;
+  margin-left: 15px; /* Ступенчатый отступ вправо */
+  padding: 4px 0;
+  border-left: 1px solid #ddd; /* Тонкая линия слева для наглядности */
+  padding-left: 10px; /* На всякий случай для экстремально узких экранов */
 }
 
 .socialLink:hover {

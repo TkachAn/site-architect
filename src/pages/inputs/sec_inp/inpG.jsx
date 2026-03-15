@@ -9,25 +9,20 @@ import {
   FloatInput,
   IntegerInput,
 } from "../../../components/base/inputs/inputsGPT";
-
-import { useState, useEffect } from "react";  
 import s from "./si.module.css";
 export const InputsContent = () => {
-   const [lastAction, setLastAction] = useState("Нажмите на любую кнопку...");
-    
-   const handleAction = (msg) =>
-     setLastAction(`Событие: ${msg} (${new Date().toLocaleTimeString()})`);
-     useEffect(() => {
-       return () => document.body.classList.remove("show-debug");
-     }, []);
-   
   return (
     <>
       <Section title="TextInput" id="text-fields">
-        <Article title="Уникальные режимы TextInput" id="text-transform">
+        <Article
+          title="Уникальные режимы TextInput"
+          id="text-transform"
+          className={s.demoBox}
+        >
           <p>
             Компонент <b>TextInput</b> поддерживает уникальный пропс -
-            <b>mode: </b><ul className={s.modeList}>
+            <b>mode: </b>
+            <ul>
               <li>Default</li>
               <li>CamelCase</li>
               <li>Snake_case</li>
@@ -35,7 +30,8 @@ export const InputsContent = () => {
           </p>
 
           <p>
-            Автоматическая очистка: удаление лишних пробелов, предотвращая ввод некорректных данных.
+            Автоматическая очистка: удаление лишних пробелов, предотвращая ввод
+            некорректных данных.
           </p>
           <p>
             <strong>Когда использовать:</strong>

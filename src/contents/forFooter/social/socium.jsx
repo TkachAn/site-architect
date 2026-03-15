@@ -3,7 +3,7 @@ import s from "./s.module.css";
 export function Social() {
   return (
     <div className={s.social}>
-      <h5 className={s.aside_title}>Follow Us</h5>
+      <h5 className={s.asideTitle}>Подписывайтесь на нас</h5>
       <ul className={s.socialList}>
         <li>
           <a href="https://facebook.com/yourpage" className={s.socialLink}>
