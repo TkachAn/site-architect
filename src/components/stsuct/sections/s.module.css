@@ -45,15 +45,18 @@ header {
   text-align: center;
 }
 
-.main > h1 {
-  font-size: 2rem;/**/
- /* margin-bottom: 0px;/**/
-  color: var(--clr-h1-l, #333);/**/
+.main>h1 {
+  font-size: 2rem;
+  /**/
+  /* margin-bottom: 0px;/**/
+  color: var(--clr-h1, #333);
+  /**/
 }
 
 .sw_h1 {
   font-size: 2rem;
 }
+
 /* Общие базовые стили для обеих панелей */
 .aside_title {
   font-size: var(--fs-aside-title, 18px);
@@ -69,7 +72,7 @@ header {
   width: 100%;
   margin-top: var(--header-h, 61px);
   padding: var(--aside-padding, 0.3rem 1rem);
-  background: var(--bg-aside, #fcfcfc);
+  background: var(--bg-aside-mobile, #fcfcfc);
   overflow-y: visible;
 }
 
@@ -79,6 +82,7 @@ header {
 
 /* Липкое позиционирование для десктопа (от 1038px) */
 @media (min-width: 1038px) {
+
   .asideLeft,
   .asideRight {
     margin-top: var(--spacing-xs, 5px);
@@ -86,7 +90,9 @@ header {
     top: var(--header-h, 61px);
     height: auto;
     align-self: start;
+    background: var(--bg-aside, #fcfcfc);
   }
+
   .wrapper {
     display: grid;
     width: 100%;
@@ -105,6 +111,7 @@ header {
   .asideRight {
     display: block;
   }
+
   .wrapper {
     grid-template-columns: var(--aside-w, 280px) 1fr var(--aside-w, 280px);
   }
@@ -123,7 +130,7 @@ header {
   font-size: var(--fs-section-title, 22px);
   margin-bottom: var(--spacing-sm, 10px);
   font-weight: bold;
-  color: var(--clr-section-title, #222222);
+  color: var(--clr-h2, #222222);
   text-align: center;
 }
 
@@ -140,7 +147,7 @@ header {
   font-size: var(--fs-article-title, 1em);
   margin-bottom: var(--spacing-sm, 10px);
   font-weight: bold;
-  color: var(--clr-article-title, #333333);
+  color: var(--clr-h3, #333333);
 }
 
 /* --- FLEX (Контейнер внутри секций) --- */
@@ -196,6 +203,7 @@ header {
     margin: var(--hero-margin-mobile, 10px);
     width: calc(100% - 20px);
   }
+
   .heroContent h1 {
     font-size: var(--fs-hero-title-mobile, 1.8rem);
   }
@@ -208,7 +216,7 @@ footer {
 .footer {
   margin-top: auto;
   background-color: var(--bg-footer, #0d1a26);
-  color: var(--clr-bg-font-l, #ffffff);
+  color: var(--clr-text-light, #ffffff);
   padding: var(--footer-padding, 1rem 2rem);
   text-align: center;
   height: var(--footer-h, 170px);

@@ -65,15 +65,17 @@ export const SchemaHero = () => (
 );
 export const SchemaSection = () => (
   <pre className={s.codeBlock}>
-    {`<Section title="Название раздела" id="section-1">
-    {/* Контент */}
+    {`<Section title="Название раздела" id="section-1" {children}>
+    <h2>Название раздела</h2>
+    {children}
   </Section>`}
   </pre>
 );
 export const SchemaArticle = () => (
   <pre className={s.codeBlock}>
-    {`<Article title="Заголовок статьи" id="art-1">
-    {/* Детализированный контент */}
+    {`<Article title="Заголовок статьи" id="art-1" {children}>
+    <h3>Заголовок статьи</h3>
+    {children}
   </Article>`}
   </pre>
 );
@@ -112,10 +114,13 @@ export const SchemaAside = () => (
 
 export const SchemaFooter = () => (
   <pre className={s.codeBlock}>
-  {
-    `<Footer>
-    <p>© 2026 Все права защищены</p>
-</Footer>`
-  }
+    {
+      `<Footer id="footer" {children}>
+          <Container>
+          {children}
+            <p>© 2026 Все права защищены</p>
+        </Container>
+    </Footer>`
+    }
   </pre>
 );

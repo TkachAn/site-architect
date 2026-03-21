@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden; /* Важно: чтобы слайд не было видно за пределами Hero */
-  color: #fff;
+  color: var(--clr-hero-text, #fff);
 }
 
 /* Анимации выезда */
@@ -63,12 +63,12 @@
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  color: rgba(255, 255, 255, 0.3); /* Еле заметные стрелки */
+  color: var(--clr-hero-nav-arrow, rgba(255, 255, 255, 0.3)); /* Еле заметные стрелки */
   transition: color 0.3s;
 }
 
 .navZone:hover {
-  color: #fff; /* Проявляются при наведении */
+  color: var(--clr-hero-nav-arrow-hover, #fff); /* Проявляются при наведении */
 }
 
 .prev { left: 0; }
@@ -127,8 +127,8 @@
   margin-bottom: 10px;
 }
 
-.line { width: 30px; height: 1px; background: #00d4ff; }
-.label { font-family: monospace; color: #00d4ff; font-size: 0.8rem; }
+.line { width: 30px; height: 1px; background: var(--clr-hero-line, #00d4ff); }
+.label { font-family: monospace; color: var(--clr-hero-label, #00d4ff); font-size: 0.8rem; }
 
 .actions {
   height: 50px; /* Место под кнопку всегда зафиксировано */

@@ -35,27 +35,27 @@
 }
 
 .normal {
-  background-color: #f0f0f0;
-  color: #333;
+  background-color: var(--clr-btn-normal-bg, #f0f0f0);
+  color: var(--clr-btn-normal-text, #333);
 }
 
 .normal:hover:not(:disabled) {
-  background-color: #0070f3;
-  color: #fff;
+  background-color: var(--clr-btn-normal-hover-bg, #0070f3);
+  color: var(--clr-btn-normal-hover-text, #fff);
 }
 
 .accent {
-  background-color: #0070f3;
-  color: #fff;
+  background-color: var(--clr-btn-accent-bg, #0070f3);
+  color: var(--clr-btn-accent-text, #fff);
 }
 
 .accent:hover:not(:disabled) {
-  background-color: #0057c2;
+  background-color: var(--clr-btn-accent-hover-bg, #0057c2);
 }
 
 .blocked {
-  background-color: #dddddd;
-  color: #888;
+  background-color: var(--clr-btn-blocked-bg, #dddddd);
+  color: var(--clr-btn-blocked-text, #888);
 }
 
 .iconButton {
@@ -63,7 +63,7 @@
   border: none;
   padding: 8px; 
   cursor: pointer;
-  color: var(--clr-icon-l, #333);
+  color: var(--clr-text-light, #333);
   transition: color 0.2s, transform 0.2s, background-color 0.2s;
   display: inline-flex;
   align-items: center;
@@ -78,14 +78,14 @@
 }
 
 .iconButton:hover:not(:disabled) {
-  color: crimson;
-  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--clr-btn-icon-hover-text, crimson);
+  background-color: var(--clr-btn-icon-hover-bg, rgba(0, 0, 0, 0.05));
 }
 
 .out {
   border: none;
   background-color: transparent;
-  color: #007bff;
+  color: var(--clr-btn-out-text, #007bff);
   font-weight: 700;
   cursor: pointer;
   padding: 4px 8px;
@@ -93,6 +93,6 @@
 }
 
 .out:hover:not(:disabled) {
-  color: blue;
+  color: var(--clr-btn-out-hover-text, blue);
   text-decoration: underline;
 }

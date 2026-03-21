@@ -179,7 +179,11 @@ export const TextInput = forwardRef(
       } else if (mode === "snake_case") {
         v = v.replace(/\s/g, "_");
       } else {
-        v = v.replace(/\s/g, "");
+        // Режим Default: 
+        // 1. Убираем пробелы в начале
+        v = v.replace(/^\s+/, "");
+        // 2. Схлопываем двойные пробелы в один
+        v = v.replace(/\s\s+/g, " ");
       }
 
       if (!isControlled) setLocalValue(v);
@@ -188,6 +192,16 @@ export const TextInput = forwardRef(
           v.trim() === "" ? "Поле обязательно для заполнения" : "",
         );
       }
+      if (onChange) {
+        const event = Object.create(e);
+        event.target = { ...e.target, value: v };
+        onChange(event);
+      }
+    };
+
+    const handleBlur = (e) => {
+      const v = e.target.value.trim();
+      if (!isControlled) setLocalValue(v);
       if (onChange) {
         const event = Object.create(e);
         event.target = { ...e.target, value: v };
@@ -209,6 +223,7 @@ export const TextInput = forwardRef(
           className={styles.input}
           value={currentValue}
           onChange={handleChange}
+          onBlur={handleBlur}
           {...props}
         />
       </BaseInput>
@@ -390,6 +405,7 @@ export const EmailInput = forwardRef(
     const [confirmVal, setConfirmVal] = useState(""); // Значение из второго поля
     const [isMatch, setIsMatch] = useState(false); // Совпадают ли адреса
     const [error, setError] = useState("");
+    const [showLangHint, setShowLangHint] = useState(false);
 
     const currentValue = isControlled ? value : localValue;
 
@@ -400,20 +416,32 @@ export const EmailInput = forwardRef(
     const handleChange = (e) => {
       const v = e.target.value;
       if (!isControlled) setLocalValue(v);
+
+      // Проверка на кириллицу
+      setShowLangHint(/[а-яА-ЯёЁ]/.test(v));
+
       setError(validators.email(v));
       onChange?.(e);
     };
 
     const inputEl = (
-      <input
-        ref={ref}
-        type="email"
-        name={name}
-        className={styles.input}
-        value={currentValue}
-        onChange={handleChange}
-        {...props}
-      />
+      <div className={styles.control}>
+        <input
+          ref={ref}
+          type="email"
+          inputMode="email"
+          name={name}
+          className={styles.input}
+          value={currentValue}
+          onChange={handleChange}
+          {...props}
+        />
+        {showLangHint && (
+          <div className={styles.hint}>
+            Пожалуйста, переключите раскладку на английскую
+          </div>
+        )}
+      </div>
     );
 
     return (
@@ -449,6 +477,7 @@ export const PasswordInput = forwardRef(
     {
       label = "Пароль",
       confirm,
+      mode = "create", // 'create' или 'login'
       value,
       defaultValue,
       onChange,
@@ -465,6 +494,7 @@ export const PasswordInput = forwardRef(
     const [isMatch, setIsMatch] = useState(false);
     const [visible, setVisible] = useState(false);
     const [error, setError] = useState("");
+    const [showLangHint, setShowLangHint] = useState(false);
 
     const currentValue = isControlled ? value : localValue;
 
@@ -475,29 +505,42 @@ export const PasswordInput = forwardRef(
     const handleChange = (e) => {
       const v = e.target.value;
       if (!isControlled) setLocalValue(v);
-      setError(validators.password(v));
+
+      // Проверка на кириллицу
+      setShowLangHint(/[а-яА-ЯёЁ]/.test(v));
+
+      // Если режим login — не валидируем на сложность
+      setError(mode === "login" ? "" : validators.password(v));
+
       onChange?.(e);
     };
 
     const inputType = visible ? "text" : "password";
     const inputEl = (
-      <div className={styles.passwordWrap}>
-        <input
-          ref={ref}
-          type={inputType}
-          name={name}
-          className={styles.input}
-          value={currentValue}
-          onChange={handleChange}
-          {...props}
-        />
-        <button
-          type="button"
-          className={styles.toggle}
-          onClick={() => setVisible(!visible)}
-        >
-          {visible ? <EyeOff size={18} /> : <Eye size={18} />}
-        </button>
+      <div className={styles.control}>
+        <div className={styles.passwordWrap}>
+          <input
+            ref={ref}
+            type={inputType}
+            name={name}
+            className={styles.input}
+            value={currentValue}
+            onChange={handleChange}
+            {...props}
+          />
+          <button
+            type="button"
+            className={styles.toggle}
+            onClick={() => setVisible(!visible)}
+          >
+            {visible ? <EyeOff size={18} /> : <Eye size={18} />}
+          </button>
+        </div>
+        {showLangHint && (
+          <div className={styles.hint}>
+            Пожалуйста, переключите раскладку на английскую
+          </div>
+        )}
       </div>
     );
 

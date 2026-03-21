@@ -3,9 +3,9 @@ import s from "./str.module.css";
 import {
   Section,
   Article,
-  Flex,  
+  Flex,
 } from "../../../components/stsuct/sections/sections";
-import { SchemaHeader, SchemaSection, SchemaStruct, SchemaArticle, SchemaAside, SchemaFlex, SchemaGrid, SchemaHero, SchemaFooter} from "./codeBlocks";
+import { SchemaHeader, SchemaSection, SchemaStruct, SchemaArticle, SchemaAside, SchemaFlex, SchemaGrid, SchemaHero, SchemaFooter } from "./codeBlocks";
 
 export function StructContent() {
   // Состояние для переключения визуальной схемы
@@ -23,9 +23,16 @@ export function StructContent() {
   };
   return (
     <>
+      <Section title="Философия макета" id="philosophy">
+        <Article title="Mobile First & Semantic HTML" id="philosophy-text">
+          <p className={s.intro}>
+            Наш шаблон построен по принципу <b>Mobile First</b>. Это означает, что базовая структура оптимизирована для мобильных устройств, а расширенные макеты (планшет и десктоп) добавляются прогрессивно. Использование семантических компонентов значительно ускоряет вёрстку.
+          </p>
+        </Article>
+      </Section>
       <Section title="Визуальная схема макета" id="visual-schema">
         {/* Переключатель режимов (Radio Buttons) */}
-        <Article title="Поведение Grid" id="grid-behavior">
+        <Article title="Адаптивность" id="grid-behavior">
           <p>
             <b>Wrapper</b> предназначен для адаптации под размеры экранов
             (Mobile First):
@@ -66,7 +73,7 @@ export function StructContent() {
                   checked={viewMode === "desktop"}
                   onChange={(e) => setViewMode(e.target.value)}
                 />
-                <b>Desktop:</b> Включается <code>flex-direction: row</code>,
+                <b>Desktop:</b> Включается flex-direction: row,
                 Aside занимают свои места по бокам от Main.
               </label>
             </li>
@@ -134,9 +141,7 @@ export function StructContent() {
           </div>
           <SchemaHeader />
         </Article>
-      </Section>
-      <Section title="Основные компоненты" id="main-components">
-        {/* HERO */}
+
         <Article title="Hero" id="hero-info">
           <p>
             Компонент <b>Hero</b> — это презентационный блок. Он занимает
@@ -162,11 +167,9 @@ export function StructContent() {
             </div>
           </div>
 
-          < SchemaHero/>
+          < SchemaHero />
         </Article>
-      </Section>
-      <Section title="Секция и статьи" id="section-article">
-        {/* SECTION */}
+
         <Article title="Section" id="section-info">
           <p>
             <b>Section</b> — это тематический раздел страницы. Он автоматически
@@ -181,7 +184,7 @@ export function StructContent() {
               Контент секции...
             </div>
           </div>
-          < SchemaSection/>
+          < SchemaSection />
         </Article>
         {/* ARTICLE */}
         <Article title="Article" id="article-info">
@@ -198,7 +201,7 @@ export function StructContent() {
               Текст или пример кода внутри статьи...
             </div>
           </div>
-          < SchemaArticle/>
+          < SchemaArticle />
         </Article>
         {/* FLEX */}
         <Article title="Flex" id="flex-info">
@@ -213,7 +216,7 @@ export function StructContent() {
               <div style={{ background: "#ddd", padding: "10px" }}>Item 3</div>
             </Flex>
           </div>
-          < SchemaFlex/>
+          < SchemaFlex />
         </Article>
         {/* GRID */}
         <Article title="Grid" id="grid-info">
@@ -237,7 +240,7 @@ export function StructContent() {
               </div>
             </div>
           </div>
-          < SchemaGrid/>
+          < SchemaGrid />
         </Article>
         {/* ASIDE PANELS */}
         <Article title="Aside (Панели)" id="aside-info">
@@ -264,7 +267,7 @@ export function StructContent() {
               </div>
             </div>
           </div>
-          < SchemaAside/>
+          < SchemaAside />
         </Article>
         {/* FOOTER */}
         <Article title="Footer" id="footer-info">
@@ -273,7 +276,7 @@ export function StructContent() {
             <code>margin-top: auto</code> в базовых стилях, он всегда
             прижимается к низу страницы, даже если контента мало.
           </p>
-          < SchemaFooter/>
+          < SchemaFooter />
         </Article>
       </Section>
     </>

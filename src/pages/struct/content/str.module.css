@@ -1,7 +1,7 @@
 .intro {
   font-size: 16px;
   line-height: 1.5;
-  color: #333;
+  color: var(--clr-str-intro-text, #333);
   margin-bottom: 20px;
   padding: 0 20px; /* Отступы для мобильных устройств */
 }
@@ -11,17 +11,17 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background: #f9f9f9;
+  background: var(--clr-str-demo-bg, #f9f9f9);
   padding: 20px;
   border-radius: 8px;
   margin: 15px 0;
-  border: 1px solid #eee;
+  border: 1px solid var(--clr-str-demo-border, #eee);
 }
 
 /* Оформление блоков с кодом */
 .codeBlock {
-  background: #2d2d2d;
-  color: #f8f8f2;
+  background: var(--clr-str-code-bg, #2d2d2d);
+  color: var(--clr-str-code-text, #f8f8f2);
   padding: 15px;
   border-radius: 6px;
   font-family: 'Fira Code','Courier New', Courier, monospace;
@@ -42,17 +42,17 @@
   margin-top: 10px;
 }
 */
-Специфический класс для превью Хедера (из твоего примера) 
+/* Специфический класс для превью Хедера (из твоего примера) */
 .headerReview {
-  background-color: #f0f0f0;
+  background-color: var(--clr-str-review-bg, #f0f0f0);
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
   text-align: center;
-  border: 1px dashed #bbb;
+  border: 1px dashed var(--clr-str-review-border, #bbb);
 }
 
-Адаптация для десктопа (Mobile First) 
+/* Адаптация для десктопа (Mobile First) */
 @media (min-width: 768px) {
   .intro {
     padding: 0; /* Убираем лишние отступы на больших экранах */
@@ -80,11 +80,11 @@
 */
 .boxHeader {
   height: 40px;
-  border: 2px solid #3498db;
+  border: 2px solid var(--clr-str-head-border, #3498db);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(52, 152, 219, 0.1);
+  background: var(--clr-str-head-bg, rgba(52, 152, 219, 0.1));
 }
 
 .boxGrid {
@@ -96,31 +96,31 @@
 .boxAside {
   display: flex;
   width: 25%;
-  background: rgba(230, 126, 34, 0.1);
-  border: 2px solid #e67e22;
+  background: var(--clr-str-aside-bg, rgba(230, 126, 34, 0.1));
+  border: 2px solid var(--clr-str-aside-border, #e67e22);
   align-items: center;
   justify-content: center;
 }
 
 .boxMain {
   flex-grow: 1;
-  border: 2px solid #2ecc71;
+  border: 2px solid var(--clr-str-main-border, #2ecc71);
   padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background: rgba(46, 204, 113, 0.1);
+  background: var(--clr-str-main-bg, rgba(46, 204, 113, 0.1));
 }
 
 .boxSection {
-  border: 2px solid #9b59b6;
+  border: 2px solid var(--clr-str-sec-border, #9b59b6);
   padding: 8px;
-  background: rgba(155, 89, 182, 0.1);
+  background: var(--clr-str-sec-bg, rgba(155, 89, 182, 0.1));
 }
 
 .boxArticle {
   margin-top: 5px;
-  border: 1px dashed #9b59b6;
+  border: 1px dashed var(--clr-str-sec-border, #9b59b6);
   height: 30px;
   display: flex;
   align-items: center;
@@ -129,11 +129,11 @@
 
 .boxFooter {
   height: 40px;
-  border: 2px solid #95a5a6;
+  border: 2px solid var(--clr-str-foot-border, #95a5a6);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(149, 165, 166, 0.1);
+  background: var(--clr-str-foot-bg, rgba(149, 165, 166, 0.1));
 }
 
 /* На мобилках скрываем сайдбары для простоты схемы или делаем их в ряд */
@@ -154,14 +154,14 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background: #f0f0f0;
+  background: var(--clr-str-cont-bg, #f0f0f0);
   padding: 15px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--clr-str-cont-border, #ccc);
   font-family: monospace;
   font-size: 12px;
   text-transform: uppercase;
-  color: #666;
+  color: var(--clr-str-cont-text, #666);
 }
 
 .schemaHeader, .schemaFooter, .schemaHero, .schemaGridHeader {
@@ -174,10 +174,10 @@
   text-align: center;
   border-radius: 4px;
 }
-.schemaHeader { background: rgba(52, 152, 219, 0.1);border: 2px solid #3498db; }
-.schemaHero   { background: #cfe2ff; border: 2px solid #b6d4fe; padding: 20px; }
-.schemaFooter { background: rgba(149, 165, 166, 0.1); border: 2px solid #95a5a6; }
-.schemaGrid { background: #fff; border: 2px solid #e67e22;}
+.schemaHeader { background: var(--clr-str-head-bg, rgba(52, 152, 219, 0.1));border: 2px solid var(--clr-str-head-border, #3498db); }
+.schemaHero   { background: var(--clr-str-hero-bg, #cfe2ff); border: 2px solid var(--clr-str-hero-border, #b6d4fe); padding: 20px; }
+.schemaFooter { background: var(--clr-str-foot-bg, rgba(149, 165, 166, 0.1)); border: 2px solid var(--clr-str-foot-border, #95a5a6); }
+.schemaGrid { background: var(--clr-str-grid-bg, #fff); border: 2px solid var(--clr-str-aside-border, #e67e22);}
 .schemaGrid{
   display: block;
   padding: 0;
@@ -192,8 +192,8 @@
 }
 
 .schemaAside {
-  background: rgba(230, 126, 34, 0.1);
-   border: 2px solid #f5c2c7;
+  background: var(--clr-str-aside-bg, rgba(230, 126, 34, 0.1));
+   border: 2px solid var(--clr-str-aside-border-alt, #f5c2c7);
   padding: 15px;
   text-align: center;
 }
@@ -203,24 +203,24 @@
   flex-direction: column;
   gap: 8px;
   flex-grow: 1;
-  background: rgba(46, 204, 113, 0.1);
-  border: 2px solid #2ecc71;
+  background: var(--clr-str-main-bg, rgba(46, 204, 113, 0.1));
+  border: 2px solid var(--clr-str-main-border, #2ecc71);
   padding: 15px;
   flex-grow: 1;
 }
 
 .schemaSection {
-   border: 1px solid #9b59b6;
+   border: 1px solid var(--clr-str-sec-border, #9b59b6);
   padding: 8px;
-  background: rgba(155, 89, 182, 0.1);
+  background: var(--clr-str-sec-bg, rgba(155, 89, 182, 0.1));
   /*margin:5px 0;*/
 }
 
 .schemaArticle {
   margin-top: 5px;
-  background: #c3cfdb;
+  background: var(--clr-str-art-bg, #c3cfdb);
   padding: 5px;
- border: 1px dashed #9b59b6;
+ border: 1px dashed var(--clr-str-sec-border, #9b59b6);
 }
 
 /* Переключение сетки на десктопе 
@@ -239,7 +239,7 @@
   gap: 15px;
   margin-bottom: 20px;
   justify-content: center;
-  background: #f8f9fa;
+  background: var(--clr-str-switch-bg, #f8f9fa);
   padding: 10px;
   border-radius: 8px;
 }
@@ -251,12 +251,12 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  color: #555;
+  color: var(--clr-str-switch-text, #555);
 }
 
 .switchItem input[type="radio"] {
   cursor: pointer;
-  accent-color: #3498db;
+  accent-color: var(--clr-str-head-border, #3498db);
 }
 
 /* Модификаторы для принудительной демонстрации сетки */

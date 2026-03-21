@@ -10,7 +10,7 @@
   display: inline-block;
   margin-top: 15px;
   padding: 10px 20px;
-  color: var(--clr-link-l, #fff);
+  color: var(--clr-link, #fff);
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s ease;

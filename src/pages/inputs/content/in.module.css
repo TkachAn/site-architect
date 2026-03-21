@@ -3,17 +3,17 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background: #f9f9f9;
+  background: var(--clr-inp-pg-demo-bg, #f9f9f9);
   padding: 20px;
   border-radius: 8px;
   margin: 15px 0;
-  border: 1px solid #eee;
+  border: 1px solid var(--clr-inp-pg-demo-border, #eee);
  /* min-width: 0;/**/
 }
 /* Оформление блоков с кодом */
 .codeBlock {
-  background: #2d2d2d;
-  color: #f8f8f2;
+  background: var(--clr-inp-pg-code-bg, #2d2d2d);
+  color: var(--clr-inp-pg-code-text, #f8f8f2);
   padding: 15px;
   border-radius: 6px;
   font-family: 'Fira Code','Courier New', Courier, monospace;

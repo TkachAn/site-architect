@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Hero } from "../../components/stsuct/sections/sections";
 import { NormButton } from "../../components/base/buttons/buttons";
 import s from "./h.module.css";
 
 export default function HeroSlider() {
   const [step, setStep] = useState(0);
-const [direction, setDirection] = useState("slideNext");
+  const [direction, setDirection] = useState("slideNext");
+  const [isDebug, setIsDebug] = useState(false);
+  const handleAction = (msg) =>
+    setLastAction(`Событие: ${msg} (${new Date().toLocaleTimeString()})`);
+  useEffect(() => {
+    return () => document.body.classList.remove("show-debug");
+  }, []);
+
+  const toggleDebug = () => {
+    setIsDebug(!isDebug);
+    document.body.classList.toggle("show-debug");
+    handleAction(isDebug ? "Debug выключен" : "Debug включен");
+  };
+
   const data = [
     {
       label: "Architecture",
@@ -65,7 +78,15 @@ const [direction, setDirection] = useState("slideNext");
             </div>
 
             <div className={s.actions}>
-              <NormButton status="accent">{data[step].btn}</NormButton>
+              <NormButton status="accent">{data[step].btn}
+
+              </NormButton>
+              <NormButton
+                          onClick={toggleDebug}
+                          status={isDebug ? "accent" : "normal"}
+                        >
+                          {isDebug ? "ДЕБАГ ВКЛЮЧЕН" : "ВКЛЮЧИТЬ ДЕБАГ"}
+                        </NormButton>
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@
   max-width: 450px;
   height: auto;
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px var(--clr-abt-img-shadow);
   object-fit: cover;
 }
 
@@ -24,7 +24,7 @@
 
 .heroText h2 {
   font-size: 1rem;
-  color: #666;
+  color: var(--clr-abt-subtitle-text);
   margin-bottom: 0.8rem;
 }
 

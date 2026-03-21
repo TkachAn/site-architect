@@ -1,14 +1,20 @@
 .anchorNav {
-  padding:0 20px;
-  /*background: #f9f9f9;/**/
+  padding: 0 20px;
+  /*background: var(--clr-anav-bg, #f9f9f9);/**/
   border-radius: 8px;
+}
+
+.summary {
+  font-weight: bold;
+  color: var(--clr-menu-page, #fff);
+
 }
 
 .navTitle {
   font-weight: bold;
   font-size: 0.9rem;
   margin-bottom: 10px;
-  color: #fff;
+  color: var(--clr-anav-title-text, #fff);
 }
 
 .list {
@@ -16,16 +22,19 @@
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column; /* Mobile First: Столбик */
+  flex-direction: column;
+  /* Mobile First: Столбик */
   gap: 10px;
 }
+
 /*
 
 /* Ссылка на Секцию (Верхний уровень) */
 .link_section {
   text-decoration: none;
-  color: var(--clr-aside-1, #0070f3);
-  font-weight: bold; /* Жирный шрифт для разделов */
+  color: var(--clr-link-1, #0070f3);
+  font-weight: bold;
+  /* Жирный шрифт для разделов */
   font-size: 1rem;
   display: block;
   margin-top: 12px;
@@ -34,16 +43,19 @@
 /* Ссылка на Артикль (Вложенный уровень) */
 .link_article {
   text-decoration: none;
-  color: var(--clr-aside-2,#fff);
+  color: var(--clr-link-2, #fff);
   font-weight: normal;
   font-size: 0.9rem;
   display: block;
-  margin-left: 15px; /* Ступенчатый отступ вправо */
+  margin-left: 15px;
+  /* Ступенчатый отступ вправо */
   padding: 4px 0;
-  border-left: 1px solid #ddd; /* Тонкая линия слева для наглядности */
+  border-left: 1px solid var(--clr-anav-link-border, #ddd);
+  /* Тонкая линия слева для наглядности */
   padding-left: 10px;
 }
 
-.link_section:hover, .link_article:hover {
-  color: #fff;
+.link_section:hover,
+.link_article:hover {
+  color: var(--clr-anav-link-hover-text, #fff);
 }

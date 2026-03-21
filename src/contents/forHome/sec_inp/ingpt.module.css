@@ -9,18 +9,18 @@
 .docBlock {
   margin-bottom: 60px;
   padding: 30px;
-  border: 1px solid #eef2f6;
+  border: 1px solid var(--clr-doc-block-border, #eef2f6);
   border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  background: var(--clr-doc-block-bg, #fff);
+  box-shadow: 0 10px 30px var(--clr-doc-shadow, rgba(0,0,0,0.05));
 }
 
 .transformationTable {
   margin: 20px 0;
   padding: 15px;
-  background: #fcfcfc;
+  background: var(--clr-doc-table-bg, #fcfcfc);
   border-radius: 8px;
-  border: 1px solid #eee;
+  border: 1px solid var(--clr-doc-table-border, #eee);
 }
 
 .badgeRow {
@@ -32,35 +32,35 @@
 }
 
 .inputBadge {
-  background: #f0f0f0;
+  background: var(--clr-doc-badge-in-bg, #f0f0f0);
   padding: 2px 8px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--clr-doc-badge-in-border, #ccc);
   font-family: monospace;
 }
 
 .outputBadge {
-  background: #e7f3ff;
-  color: #007bff;
+  background: var(--clr-doc-badge-out-bg, #e7f3ff);
+  color: var(--clr-doc-badge-out-text, #007bff);
   padding: 2px 8px;
   border-radius: 4px;
-  border: 1px solid #b3d7ff;
+  border: 1px solid var(--clr-doc-badge-out-border, #b3d7ff);
   font-weight: bold;
 }
 
 .exampleArea {
   padding: 25px;
-  background: #f8f9fa;
+  background: var(--clr-doc-example-bg, #f8f9fa);
   border-radius: 12px;
-  border: 1px solid #dadce0;
+  border: 1px solid var(--clr-doc-example-border, #dadce0);
   margin: 20px 0;
 }
 
 .codeBox {
-  background: #202124;
+  background: var(--clr-doc-codebox-bg, #202124);
   padding: 20px;
   border-radius: 12px;
-  color: #a1efe4;
+  color: var(--clr-doc-codebox-text, #a1efe4);
   font-size: 13px;
   font-family: 'Fira Code', monospace;
   overflow-x: auto;
@@ -69,29 +69,29 @@
 .docSection {
   margin-bottom: 50px;
   padding: 25px;
-  border: 1px solid #eef2f6;
+  border: 1px solid var(--clr-doc-block-border, #eef2f6);
   border-radius: 12px;
-  background: #fff;
+  background: var(--clr-doc-block-bg, #fff);
 }
 
 .docTitle {
-  color: #1a73e8;
+  color: var(--clr-doc-title-text, #1a73e8);
   margin: 0 0 10px 0;
   font-size: 22px;
 }
 
 .docDesc {
-  color: #555;
+  color: var(--clr-doc-desc-text, #555);
   font-size: 15px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
 
 .transformTable {
-  background: #fcfcfc;
+  background: var(--clr-doc-table-bg, #fcfcfc);
   padding: 15px;
   border-radius: 8px;
-  border: 1px solid #eee;
+  border: 1px solid var(--clr-doc-table-border, #eee);
   margin-bottom: 20px;
 }
 
@@ -104,35 +104,35 @@
 }
 
 .inputBadge {
-  background: #f0f0f0;
+  background: var(--clr-doc-badge-in-bg, #f0f0f0);
   padding: 2px 8px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--clr-doc-badge-in-border, #ccc);
   font-family: monospace;
 }
 
 .outputBadge {
-  background: #e7f3ff;
-  color: #007bff;
+  background: var(--clr-doc-badge-out-bg, #e7f3ff);
+  color: var(--clr-doc-badge-out-text, #007bff);
   padding: 2px 8px;
   border-radius: 4px;
-  border: 1px solid #b3d7ff;
+  border: 1px solid var(--clr-doc-badge-out-border, #b3d7ff);
   font-weight: bold;
 }
 
 .exampleArea {
   padding: 20px;
-  background: #f8f9fa;
+  background: var(--clr-doc-example-bg, #f8f9fa);
   border-radius: 10px;
-  border: 1px solid #dadce0;
+  border: 1px solid var(--clr-doc-example-border, #dadce0);
   margin-bottom: 15px;
 }
 
 .codeBox {
-  background: #202124;
+  background: var(--clr-doc-codebox-bg, #202124);
   padding: 15px;
   border-radius: 8px;
-  color: #a1efe4;
+  color: var(--clr-doc-codebox-text, #a1efe4);
   font-size: 13px;
   font-family: 'Fira Code', monospace;
   overflow-x: auto;
@@ -153,28 +153,28 @@
 .docBlock {
   margin-bottom: 60px;
   padding: 30px;
-  border: 1px solid #eef2f6;
+  border: 1px solid var(--clr-doc-block-border, #eef2f6);
   border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  background: var(--clr-doc-block-bg, #fff);
+  box-shadow: 0 10px 30px var(--clr-doc-shadow, rgba(0,0,0,0.05));
 }
 
 /* Заголовки и подзаголовки внутри секции *
 .docTitle {
-  color: #1a73e8;
+  color: var(--clr-doc-title-text, #1a73e8);
   margin-top: 0;
   font-size: 24px;
   font-weight: 700;
 }
 
 .docSubTitle {
-  color: #5f6368;
+  color: var(--clr-doc-subtitle-text, #5f6368);
   margin-bottom: 15px;
   font-size: 18px;
 }
 
 .docDescription {
-  color: #3c4043;
+  color: var(--clr-doc-desc-text, #3c4043);
   font-size: 16px;
   line-height: 1.6;
 }
@@ -182,7 +182,7 @@
 /* Список ключевых возможностей *
 .featureList {
   padding-left: 20px;
-  color: #5f6368;
+  color: var(--clr-doc-subtitle-text, #5f6368);
   font-size: 14px;
   line-height: 1.8;
   margin: 20px 0;
@@ -192,9 +192,9 @@
 .transformationTable {
   margin: 20px 0;
   padding: 15px;
-  background: #fcfcfc;
+  background: var(--clr-doc-table-bg, #fcfcfc);
   border-radius: 8px;
-  border: 1px solid #eee;
+  border: 1px solid var(--clr-doc-table-border, #eee);
 }
 
 .badgeRow {
@@ -206,28 +206,28 @@
 }
 
 .inputBadge {
-  background: #f0f0f0;
+  background: var(--clr-doc-badge-in-bg, #f0f0f0);
   padding: 2px 8px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--clr-doc-badge-in-border, #ccc);
   font-family: monospace;
 }
 
 .outputBadge {
-  background: #e7f3ff;
-  color: #007bff;
+  background: var(--clr-doc-badge-out-bg, #e7f3ff);
+  color: var(--clr-doc-badge-out-text, #007bff);
   padding: 2px 8px;
   border-radius: 4px;
-  border: 1px solid #b3d7ff;
+  border: 1px solid var(--clr-doc-badge-out-border, #b3d7ff);
   font-weight: bold;
 }
 
 /* Область с живыми инпутами *
 .exampleArea {
   padding: 25px;
-  background: #f8f9fa;
+  background: var(--clr-doc-example-bg, #f8f9fa);
   border-radius: 12px;
-  border: 1px solid #dadce0;
+  border: 1px solid var(--clr-doc-example-border, #dadce0);
   margin: 25px 0;
 }
 
@@ -245,7 +245,7 @@
 .codeLabel {
   display: block;
   margin-bottom: 10px;
-  color: #9aa0a6;
+  color: var(--clr-doc-label-text, #9aa0a6);
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;

@@ -3,7 +3,7 @@ import { Layout } from "../layout";
 import s from "./ab.module.css";
 
 export const About = () => (
-  <Layout title="О нас" sw_h1={false} al_title="Обо мне" ar_title="social">
+  <Layout title="О нас" al_title="Обо мне" ar_title="social">
     <Section id="about" title="Оксана Ткачевская">
       <Article id="Developer" title="Full Stack Developer">
         <div className={s.heroWrapper}>
@@ -16,14 +16,13 @@ export const About = () => (
             />
           </div>
           <div className={s.heroText}>
-
-        <p>
-          <b>Я — универсальный IT-специалист, </b>
-          способен самостоятельно создавать весь продукт, от интерфейса до
-          серверной части и баз данных. Работаю как с фронтендом, так и с
-          бэкендом, что позволяет мне полностью реализовывать веб-сервисы и
-          приложения.
-        </p>
+            <p>
+              <b>Я — универсальный IT-специалист, </b>
+              способен самостоятельно создавать весь продукт, от интерфейса до
+              серверной части и баз данных. Работаю как с фронтендом, так и с
+              бэкендом, что позволяет мне полностью реализовывать веб-сервисы и
+              приложения.
+            </p>
           </div>
         </div>
       </Article>

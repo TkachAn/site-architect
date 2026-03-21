@@ -51,7 +51,7 @@ export function AutoAnchorNav() {
     <nav className={s.anchorNav}>
       {isMobile ? (
         <details className={s.mobileDetails}>
-          <summary className={s.summary}>Выбрать раздел</summary>
+          <summary className={s.summary}>Меню раздела</summary>
           {NavList}
         </details>
       ) : (

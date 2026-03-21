@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6); /* Затемнение фона */
+  background-color: var(--clr-modal-overlay-bg, rgba(0, 0, 0, 0.6)); /* Затемнение фона */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,16 +20,16 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #333;
+  color: var(--clr-modal-close-text, #333);
 }
 .content {
-  background-color: #fff;
+  background-color: var(--clr-modal-content-bg, #fff);
   padding: 40px 20px 20px 20px;
   border-radius: 12px;
   position: relative;
   min-width: 320px;
   max-width: 90%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px var(--clr-modal-shadow, rgba(0, 0, 0, 0.2));
   animation: modalAppear 0.3s ease-out;
 }
 

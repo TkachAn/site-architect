@@ -10,7 +10,7 @@
 
 .errorCode {
   font-size: 80px;
-  color: #e74c3c;
+  color: var(--clr-err-code-text, #e74c3c);
   margin: 0;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .errorSubText {
-  color: #888;
+  color: var(--clr-err-sub-text, #888);
   font-style: italic;
 }
 .errorContainer {
@@ -35,7 +35,7 @@
 .codeDisplay {
   font-size: 100px;
   margin: 0;
-  color: #e74c3c;
+  color: var(--clr-err-code-text, #e74c3c);
 }
 
 .descriptionText {

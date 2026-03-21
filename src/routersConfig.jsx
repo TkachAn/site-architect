@@ -1,5 +1,5 @@
 import { About } from "./pages/about_us/about.jsx";
-import { Contacts } from "./pages/contacts.jsx";
+import { Contacts } from "./pages/contact/contacts.jsx";
 import { Home } from "./pages/home.jsx";
 import { NotFound } from "./pages/notfound/notFound.jsx";
 import { ErrorsPage } from "./pages/errors.jsx";
@@ -8,6 +8,7 @@ import { AuthPage } from "./pages/authorization.jsx";
 import { Cabinet } from "./pages/cabinet.jsx";
 import { InputsPage } from "./pages/inputs/inputsPage.jsx";
 import { StructPage } from "./pages/struct/strPage.jsx";
+
 
 export const routes = [
   {
@@ -41,9 +42,10 @@ export const routes = [
     title: "Структура страницы",
     showInMenu: false,
   },
+
   {
     path: "/inputs",
-    element: <InputsPage/>,
+    element: <InputsPage />,
     title: "Компоненты ввода",
     showInMenu: false,
   },

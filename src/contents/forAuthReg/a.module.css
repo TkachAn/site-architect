@@ -3,11 +3,11 @@
   margin-top: 15px;
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: var(--clr-auth-footer-text, #666);
 }
 
 .footerLink a {
-  color: #007bff; /* Твой акцентный цвет */
+  color: var(--clr-auth-link-text, #007bff); /* Твой акцентный цвет */
   text-decoration: none;
   font-weight: 600;
   margin-left: 5px;

@@ -4,16 +4,16 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background: #f9f9f9;
+  background: var(--clr-home-demo-bg, #f9f9f9);
   padding: 20px;
   border-radius: 8px;
   margin: 15px 0;
-  border: 1px solid #eee;
+  border: 1px solid var(--clr-home-demo-border, #eee);
 }
 
 .codeBlock {
-  background: #2d2d2d;
-  color: #f8f8f2;
+  background: var(--clr-home-code-bg, #2d2d2d);
+  color: var(--clr-home-code-text, #f8f8f2);
   padding: 15px;
   border-radius: 6px;
   font-family: 'Courier New', Courier, monospace;
@@ -30,11 +30,11 @@
 }
 
 .eventLog {
-  background: #fff;
-  border: 1px dashed #ccc;
+  background: var(--clr-home-log-bg, #fff);
+  border: 1px dashed var(--clr-home-log-border, #ccc);
   padding: 10px;
   font-size: 12px;
-  color: #555;
+  color: var(--clr-home-log-text, #555);
   border-radius: 4px;
   min-height: 40px;
   display: flex;

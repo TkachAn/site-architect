@@ -6,15 +6,15 @@
 
 .title {
   font-size: 1.1rem;
-  color: #333;
+  color: var(--clr-cab-title-text, #333);
   text-transform: capitalize;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--clr-cab-title-border, #eee);
   padding-bottom: 4px;
 }
 
 .group {
   padding-left: 15px; /* Визуальная вложенность */
-  border-left: 1px solid #ddd;
+  border-left: 1px solid var(--clr-cab-group-border, #ddd);
 }
 
 .item {
@@ -25,7 +25,7 @@
 
 .label {
   font-weight: bold;
-  color: #555;
+  color: var(--clr-cab-label-text, #555);
   text-transform: capitalize;
 }
 

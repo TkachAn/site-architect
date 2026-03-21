@@ -18,7 +18,7 @@ import { Modal } from "../components/stsuct/extra/modal/mod";
 import { LoginForm } from "../contents/forAuthReg/loginForm";
 import { DeBag } from "../contents/debag/debag";
 
-export function Layout({ children, title, al_title, ar_title, sw_h1 = "true" }) {
+export function Layout({ children, title, al_title, ar_title, sw_h1 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (

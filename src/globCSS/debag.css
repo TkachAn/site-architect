@@ -2,7 +2,7 @@
 
 /* Включается только если у body есть класс .show-debug */
 body.show-debug section {
-  outline: 2px dashed  #0070f3 !important;
+  outline: 2px dashed #0070f3 !important;
   position: relative !important;
   background-color: rgba(0, 112, 243, 0.03) !important;
   /* outline-offset: 16px; /**/
@@ -49,14 +49,16 @@ body.show-debug article::before {
 body.show-debug [class*="container"] {
   outline: 3px double #9b59b6 !important;
   position: relative !important;
-   padding: 2px !important; /**/
+  padding: 2px !important;
+  /**/
 }
+
 body.show-debug [class*="container"]::before {
   content: "Container";
   position: absolute;
   top: 0px;
   left: 10px;
-  background: #9b59b6 ;
+  background: #9b59b6;
   color: white;
   font-size: 11px;
   font-weight: bold;
@@ -64,19 +66,21 @@ body.show-debug [class*="container"]::before {
   border-radius: 4px;
   z-index: 111;
 }
+
 /* Подсветка сайдбаров по тегу aside */
 body.show-debug aside {
   outline: 2px dashed #f39c12 !important;
   outline-offset: -2px;
-  position: relative !important;
+  /* position: relative !important;/**/
   background-color: rgba(243, 156, 18, 0.05) !important;
 }
+
 body.show-debug aside::before {
   content: "Container";
   position: absolute;
   top: 0px;
   left: 10px;
-  background: #f39c12 ;
+  background: #f39c12;
   color: white;
   font-size: 11px;
   font-weight: bold;
