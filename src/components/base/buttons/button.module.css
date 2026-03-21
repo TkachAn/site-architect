@@ -61,7 +61,7 @@
 .iconButton {
   background: transparent;
   border: none;
-  padding: 8px; 
+  padding: 8px;
   cursor: pointer;
   color: var(--clr-text-light, #333);
   transition: color 0.2s, transform 0.2s, background-color 0.2s;
@@ -78,7 +78,7 @@
 }
 
 .iconButton:hover:not(:disabled) {
-  color: var(--clr-btn-icon-hover-text, crimson);
+  color: var(--clr-icon-hover, crimson);
   background-color: var(--clr-btn-icon-hover-bg, rgba(0, 0, 0, 0.05));
 }
 

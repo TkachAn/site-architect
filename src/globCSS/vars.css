@@ -44,7 +44,11 @@
   --clr-text: var(--clr-plt-9);
   --clr-text-muted: var(--clr-plt-12);
   --clr-text-light: var(--clr-plt-10);
+  /*header*/
+  --clr-nav-text: var(--clr-plt-4);
+  --clr-icon-hover: var(--clr-plt-11);
 
+  /*h1-h6*/
   --clr-h1: var(--clr-plt-11);
   --clr-h2: var(--clr-plt-2);
   --clr-h3: var(--clr-plt-3);

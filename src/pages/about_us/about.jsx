@@ -3,7 +3,7 @@ import { Layout } from "../layout";
 import s from "./ab.module.css";
 
 export const About = () => (
-  <Layout title="О нас" al_title="Обо мне" ar_title="social">
+  <Layout title="О нас">
     <Section id="about" title="Оксана Ткачевская">
       <Article id="Developer" title="Full Stack Developer">
         <div className={s.heroWrapper}>
